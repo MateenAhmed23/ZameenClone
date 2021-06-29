@@ -31,6 +31,7 @@
 
     <!-- Query Section -->
     <section id="query" class="m-5 ps-5 pe-5 border border-dark pt-3 pb-3">
+      <h1>Search</h1>
         <form class="" action="">
             <div class="row mb-3">
                 <div class="col">
