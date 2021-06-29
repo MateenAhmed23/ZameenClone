@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -19,14 +21,17 @@
     <!-- <section id="header"> -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand ps-5" href="index.html">Real Estate</a>
+            <a class="navbar-brand ps-5" href="index.php">Real Estate</a>
             <ul class="navbar-nav ms-auto pe-5">
-                <li class="navbar-item pe-2"><a class="nav-link" href="login.html">Login</a></li>
-                <li class="navbar-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+                <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
+                <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
             </ul>
         </nav>
     </header>
-    <section id="query" class="m-5 ps-5 pe-5">
+
+    <!-- Query Section -->
+    <section id="query" class="m-5 ps-5 pe-5 border border-dark pt-3 pb-3">
+      <h1>Search</h1>
         <form class="" action="">
             <div class="row mb-3">
                 <div class="col">
@@ -56,9 +61,9 @@
                         <option value="house">House</option>
                         <option value="flat">Flat</option>
                         <option value="upper portion">Upper Portion</option>
-                        <option value="lower portion">Upper Portion</option>
-                        <option value="farm house">Upper Portion</option>
-                        <option value="Room penthouse">Upper Portion</option>
+                        <option value="lower portion">Lower Portion</option>
+                        <option value="farm house">Farm House</option>
+                        <option value="penthouse"> Penthouse</option>
                     </select>
                 </div>
                 <div class="col">
@@ -74,19 +79,21 @@
 
             <div class="row">
 
-                <div class="col d-grid ms-5 me-5">
-                    <input class="btn btn-dark" type="submit" value="Find">
-                </div>
+                <!-- <div class="col"> -->
+                    <input class="w-50 btn btn-dark ms-auto me-auto" type="submit" value="Find">
+                <!-- </div> -->
             </div>
         </form>
     </section>
-
+    
+    <!-- Result Section -->
     <section id="result">
         <div class="container">
+            <!-- Row 1 of Result -->
             <div class="row ms-auto me-auto mb-3">
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -94,14 +101,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -109,14 +116,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -124,14 +131,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -139,16 +146,18 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
             </div>
+            <!-- Row 2 Of Result -->
             <div class="row ms-auto me-auto mb-3">
+              <!-- pull origin -u master -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -156,14 +165,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -171,14 +180,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -186,14 +195,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -201,12 +210,12 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
-            </div>
+            </div>    
         </div>
         
     </section>
