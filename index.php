@@ -56,9 +56,9 @@
                         <option value="house">House</option>
                         <option value="flat">Flat</option>
                         <option value="upper portion">Upper Portion</option>
-                        <option value="lower portion">Upper Portion</option>
-                        <option value="farm house">Upper Portion</option>
-                        <option value="Room penthouse">Upper Portion</option>
+                        <option value="lower portion">Lower Portion</option>
+                        <option value="farm house">Farm House</option>
+                        <option value="penthouse"> Penthouse</option>
                     </select>
                 </div>
                 <div class="col">
@@ -74,9 +74,9 @@
 
             <div class="row">
 
-                <div class="col d-grid ms-5 me-5">
-                    <input class="btn btn-dark" type="submit" value="Find">
-                </div>
+                <!-- <div class="col"> -->
+                    <input class="w-50 btn btn-dark ms-auto me-auto" type="submit" value="Find">
+                <!-- </div> -->
             </div>
         </form>
     </section>
@@ -95,7 +95,7 @@
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
                         <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
@@ -110,7 +110,7 @@
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
                         <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
@@ -125,7 +125,7 @@
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
                         <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
@@ -140,7 +140,7 @@
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
                         <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
@@ -157,7 +157,7 @@
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
                         <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
@@ -172,7 +172,7 @@
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
                         <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
@@ -187,7 +187,7 @@
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
                         <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
@@ -202,11 +202,11 @@
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
                         <div class="card-body">
-                          <a href="#" class="btn btn-dark me-auto card-link">See</a>
+                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
-            </div>
+            </div>    
         </div>
         
     </section>
