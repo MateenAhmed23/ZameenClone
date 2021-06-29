@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -26,7 +28,9 @@
             </ul>
         </nav>
     </header>
-    <section id="query" class="m-5 ps-5 pe-5">
+
+    <!-- Query Section -->
+    <section id="query" class="m-5 ps-5 pe-5 border border-dark pt-3 pb-3">
         <form class="" action="">
             <div class="row mb-3">
                 <div class="col">
@@ -80,13 +84,15 @@
             </div>
         </form>
     </section>
-
+    
+    <!-- Result Section -->
     <section id="result">
         <div class="container">
+            <!-- Row 1 of Result -->
             <div class="row ms-auto me-auto mb-3">
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -94,14 +100,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house2.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -109,14 +115,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house3.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -124,14 +130,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house4.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -139,16 +145,18 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
             </div>
+            <!-- Row 2 Of Result -->
             <div class="row ms-auto me-auto mb-3">
+              <!-- pull origin -u master -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -156,14 +164,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house2.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -171,14 +179,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house3.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -186,14 +194,14 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house4.jpg" class="card-img-top" alt="...">
+                        <img style="height: 12rem;" src="images/house4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -201,8 +209,8 @@
                           <li class="list-group-item"><b>Price: </b>10000000</li>
                           <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
                         </ul>
-                        <div class="card-body">
-                          <a href="ad.php" class="w-100 btn btn-dark me-auto card-link">See</a>
+                        <div class="row card-body">
+                          <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
                         </div>
                       </div>
                 </div>
