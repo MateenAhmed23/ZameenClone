@@ -19,10 +19,10 @@
     <!-- <section id="header"> -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand ps-5" href="index.html">Real Estate</a>
+            <a class="navbar-brand ps-5" href="index.php">Real Estate</a>
             <ul class="navbar-nav ms-auto pe-5">
-                <li class="navbar-item pe-2"><a class="nav-link" href="login.html">Login</a></li>
-                <li class="navbar-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+                <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
+                <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
             </ul>
         </nav>
     </header>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img src="images/house2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img src="images/house3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img src="images/house4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img src="images/house2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img src="images/house3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
@@ -193,7 +193,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/house.jpg" class="card-img-top" alt="...">
+                        <img src="images/house4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">House In DHA Phase 11</h5>
                         </div>
