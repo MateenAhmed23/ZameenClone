@@ -24,20 +24,20 @@
     </nav>
   </header>
   <main class="form-signin">
-    <div class="m-5 p-5">
+    <div class="m-5 ps-3 pe-3">
       <form>
       
         <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
         <div class="row">
           <div class="col">
             <div class="form-floating mb-3">
-              <input type="text" name="firstname" class="form-control" id="floatingFirstName" placeholder="First Name">
+              <input type="text" name="firstname" class="form-control" id="floatingFirstName" placeholder="First Name" required>
               <label for="floatingEmail">First Name</label>
             </div>
           </div>
           <div class="col">
             <div class="form-floating mb-3">
-              <input type="text" name="lastname" class="form-control" id="floatingLastName" placeholder="Last Name">
+              <input type="text" name="lastname" class="form-control" id="floatingLastName" placeholder="Last Name" required>
               <label for="floatingLastName">Last Name</label>
             </div>
           </div>
@@ -45,26 +45,36 @@
             
         </div>
         <div class="form-floating mb-3">
-          <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+          <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
           <label for="floatingEmail">Email address</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" name="username" class="form-control" id="floatingUsername" placeholder="Username">
+          <input type="text" name="username" class="form-control" id="floatingUsername" placeholder="Username" required>
           <label for="floatingUsername">Username</label>
         </div>
   
         <div class="form-floating mb-3">
-          <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Password</label>
+          <input type="tel" name="phone" class="form-control" id="floatingPhone" placeholder="+92-331-1234561" pattern="[+92]{3}-[0-9]{3}-[0-9]{7}" required>
+          <label for="floatingPhone">Phone (+92-331-1234561)</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="password" name="re-password" class="form-control" id="floatingRePassword" placeholder="Password">
+          <input type="number" name="phone" class="form-control" id="floatingPhone" placeholder="XXXXX-XXXXXXX-X" pattern="[+92]{3}-[0-9]{3}-[0-9]{7}">
+          <label for="floatingPhone">CNIC (XXXXX-XXXXXXX-X) (Optional)</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+          <label for="floatingPassword">Password</label>
+        </div>
+       
+        <div class="form-floating mb-3">
+          <input type="password" name="re-password" class="form-control" id="floatingRePassword" placeholder="Password" required>
           <label for="floatingRePassword">Re-enter Your Password</label>
         </div>
 
-        <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+        <button class="w-100 btn btn-lg btn-dark" type="submit">Sign Up</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
         
       </form>
