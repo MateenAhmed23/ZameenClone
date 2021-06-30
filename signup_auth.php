@@ -1,5 +1,7 @@
 <?php
 
+    include "connection.php";
+
 
     // firstname=&lastname=&email=&username=&password=&re-password=
 
@@ -11,24 +13,37 @@
     $password = $_POST["password"];
     $re_password = $_POST["re-password"];
 
+    // Phone Number????
+
+    // Cnic???
+
+
+    // Profile Pic????  (Optional)
+
+
+    // Checking password
+
     if ($password != $re_password){
         die ("Passwords does not match");
     }
 
+
+
+
     echo "<p> $f_name $l_name" ;
-    
-    
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $db_name = "zameendb";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $db_name);
 
-    // Check connection
-    if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    
+
+
+    // Writing Query to check if username already exists
+    $sql = "INSERT INTO user (f_name ,l_name,username,password,email,phone, cnic)
+    VALUES ('$f_name', '$l_name', '$username', '$password', '$email', '03315471021', '3520030721157')";
+
+
+    if ($conn->query($sql) === TRUE) {
+    echo "User Did sign up successfully";
+    } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    echo "Connected successfully";
 ?>
