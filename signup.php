@@ -56,13 +56,13 @@
         </div>
   
         <div class="form-floating mb-3">
-          <input type="tel" name="phone" class="form-control" id="floatingPhone" placeholder="+92-331-1234561" pattern="[+92]{3}-[0-9]{3}-[0-9]{7}" required>
-          <label for="floatingPhone">Phone (+92-331-1234561)</label>
+          <input type="tel" name="phone" class="form-control" id="floatingPhone" placeholder="+92-331-1234561" pattern="[0]{1}[0-9]{10}" required>
+          <label for="floatingPhone">Phone (03311234561)</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="number" name="phone" class="form-control" id="floatingPhone" placeholder="XXXXX-XXXXXXX-X" pattern="[+92]{3}-[0-9]{3}-[0-9]{7}">
-          <label for="floatingPhone">CNIC (XXXXX-XXXXXXX-X) (Optional)</label>
+          <input type="number" name="cnic" class="form-control" id="cnic" placeholder="XXXXXXXXXXXXX">
+          <label for="cnic">CNIC (XXXXXXXXXXXXX) (Optional)</label>
         </div>
 
         <div class="form-floating mb-3">

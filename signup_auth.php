@@ -5,7 +5,6 @@
 
     // firstname=&lastname=&email=&username=&password=&re-password=
 
-
     $f_name = $_POST["firstname"];
     $l_name = $_POST["lastname"];
     $email = $_POST["email"];
@@ -13,12 +12,18 @@
     $password = $_POST["password"];
     $re_password = $_POST["re-password"];
 
-    // Phone Number????
+    // Optional
 
-    // Cnic???
+    $cnic = NULL;
+    if (isset($_POST["cnic"])){
+        $cnic = $_POST["cnic"];
+    }
 
-
-    // Profile Pic????  (Optional)
+    $phone = NULL;
+    if (isset($_POST["phone"]))
+    {
+        $phone = $_POST["phone"];
+    }
 
 
     // Checking password
@@ -30,7 +35,7 @@
 
     // Writing Query to check if username already exists
     $sql = "INSERT INTO user (f_name ,l_name,username,password,email,phone, cnic)
-    VALUES ('$f_name', '$l_name', '$username', '$password', '$email', '03315471021', '3520030721157')";
+    VALUES ('$f_name', '$l_name', '$username', '$password', '$email', '$phone', '$cnic')";
 
 
     if ($conn->query($sql) === TRUE) {
