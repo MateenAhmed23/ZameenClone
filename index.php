@@ -6,7 +6,7 @@
 
   $category = array('House', 'Flat', 'Commercial', 'Farm House');
 
-  $sc_for_House = array('All Floors', 'Basement', 'Ground Floor', 'First Floor');
+  $sc_for_House = array('Any', 'Basement', 'Ground Floor', 'First Floor');
 
   $sc_for_Flat = array('Any', 'Pent House');
 
@@ -33,6 +33,8 @@
   <link href="css/index.css" rel="stylesheet">
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
 
 </head>
 
@@ -110,13 +112,11 @@
       <div class="col-md-4">
         <label class="form-label" for="s_category">Sub-Category</label>
         <select class="form-select" name="s_category" id="s_category">
-
-          <option value="house">House</option>
-          <option value="flat">Flat</option>
-          <option value="upper portion">Upper Portion</option>
-          <option value="lower portion">Lower Portion</option>
-          <option value="farm house">Farm House</option>
-          <option value="penthouse"> Penthouse</option>
+          <?php
+            foreach ($sc_for_House as $value) {
+              echo "<option value='$value'>$value</option>";
+            }
+          ?>
         </select>
       </div>
 
@@ -293,6 +293,66 @@
   <footer>
 
   </footer>
+
+  <script type="text/javascript" src="jquery/jquery.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+
+  	$("#category").on("change",function(){
+
+  		var category = $("#category").val();
+
+
+      // Please change arrays if there are changes in sub categories.... THEY ARE NOT DYNAMMIC
+
+      let txt = "";
+
+      if (category === 'House')
+      {
+        var House = ['Any', 'Basement', 'Ground Floor', 'First Floor'];
+
+
+        for (let i = 0; i < House.length; ++i) {
+          txt += "<option value=" + House[i] + ">" + House[i] + "</option>";
+        }
+        
+      }
+
+      else if (category === 'Flat')
+      {
+
+        var Flat = ['Any', 'Pent House'];
+
+        for (let i = 0; i < Flat.length; ++i) {
+          txt += "<option value=" + Flat[i] + ">" + Flat[i] + "</option>";
+        }
+      }
+
+
+      else if (category === 'Commercial')
+      {
+        var Commercial = ['Office', 'Shop'];
+
+        for (let i = 0; i < Commercial.length; ++i) {
+          txt += "<option value=" + Commercial[i] + ">" + Commercial[i] + "</option>";
+        }
+      }
+
+      else{
+
+        var Farm = ['Any'];
+
+        for (let i = 0; i < Farm.length; ++i) {
+          txt += "<option value=" + Farm[i] + ">" + Farm[i] + "</option>";
+        }
+        
+      }
+
+
+      $('#s_category').html(txt);
+  	})
+  });
+</script>
 
 </body>
 
