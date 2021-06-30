@@ -1,0 +1,10 @@
+.container-fluid{
+  width:95%;
+}
+/* @media (max-width:600px){
+   .query-container{
+    padding-left:1rem;
+    padding-right:1rem;
+    margin:0px
+  }
+} */
