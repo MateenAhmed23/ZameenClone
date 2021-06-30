@@ -1,6 +1,9 @@
 .container-fluid{
   width:95%;
 }
+.navbar-items {
+  padding-right: 4rem;
+}
 /* @media (max-width:600px){
    .query-container{
     padding-left:1rem;
