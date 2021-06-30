@@ -24,8 +24,9 @@
     </nav>
   </header>
   <main class="form-signin">
-    <div class="m-5 ps-3 pe-3">
-      <form>
+
+    <div class="m-5 p-5">
+      <form method="POST" action="signup_auth.php">
       
         <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
         <div class="row">
