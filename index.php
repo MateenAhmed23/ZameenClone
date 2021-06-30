@@ -1,3 +1,22 @@
+<?php
+
+  $type = array('Buy', 'Rent');
+
+  $cities = array('Lahore', 'Karachi' , 'Islamabad', 'Peshawar', 'Quetta', 'Muzaffarabad');
+
+  $category = array('House', 'Flat', 'Commercial', 'Farm House');
+
+  $sc_for_House = array('All Floors', 'Basement', 'Ground Floor', 'First Floor');
+
+  $sc_for_Flat = array('Any', 'Pent House');
+
+  $sc_for_Commercial = array('Office', 'Shop');
+
+  $sc_for_Farm = array('Any');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,32 +56,61 @@
   <!-- Query Section -->
   <section id="Query" class="m-5 ps-5 pe-5 border border-dark pt-3 pb-3">
     <h1>Search</h1>
-    <form class="row g-3" action="">
+    <form class="row g-3" action="searchads.php" method="POST">
       <div class="col-md-4">
+
+      <!-- Type -->
         <label class="form-label" for="type">Type</label>
         <select class="form-select" name="type" id="type">
-          <option value="buy">Buy</option>
-          <option value="rent">Rent</option>
+          <!-- <option value="buy">Buy</option>
+          <option value="rent">Rent</option> -->
+        <?php
+          foreach ($type as $value) {
+              echo "<option value='$value'>$value</option>";
+          }
+        ?>
         </select>
       </div>
 
+      <!-- Cities -->
       <div class="col-md-4">
         <label class="form-label" for="cities">Cities</label>
         <select class="form-select" name="cities" id="cities">
-          <option value="lahore">Lahore</option>
-          <option value="karachi">Karachi</option>
-          <option value="quetta">Quetta</option>
+        <?php
+          foreach ($cities as $value) {
+              echo "<option value='$value'>$value</option>";
+          }
+        ?>
         </select>
       </div>
+
+
+      <!-- Location -->
 
       <div class="col-md-4">
         <label class="form-label" for="location">Location</label>
         <input class="form-control" type="text" name="location" id="location" maxlength="50">
       </div>
 
+      <!-- Category -->
+
       <div class="col-md-4">
         <label class="form-label" for="category">Category</label>
         <select class="form-select" name="category" id="category">
+        <?php
+          foreach ($category as $value) {
+            echo "<option value='$value'>$value</option>";
+          }
+        ?>
+        </select>
+      </div>
+
+      <!-- Sub- Category -->
+
+      <div class="col-md-4">
+        <label class="form-label" for="s_category">Sub-Category</label>
+        <select class="form-select" name="s_category" id="s_category">
+
           <option value="house">House</option>
           <option value="flat">Flat</option>
           <option value="upper portion">Upper Portion</option>
@@ -72,16 +120,24 @@
         </select>
       </div>
 
+
+      <!-- Minimum Price -->
+
       <div class="col-md-4">
         <label class="form-label" for="min-price">Minimum Price(1000)</label>
         <input class="form-control" type="number" name="min-price" id="min-price" min="1000">
       </div>
+
+
+      <!-- Maximum Price -->
 
       <div class="col-md-4">
           <label class="form-label" for="max-price">Maximum Price</label>
           <input class="form-control" type="number" name="max-price" id="max-price">
       </div>
 
+
+      <!-- Input Button -->
       <div class="row mt-3">
         <!-- <div class="col ms-auto me-auto"> -->
         <input class="w-25 btn btn-dark ms-auto me-auto" type="submit" value="Find">
@@ -237,8 +293,6 @@
   <footer>
 
   </footer>
-
-  <!-- </section> -->
 
 </body>
 
