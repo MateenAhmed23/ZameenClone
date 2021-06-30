@@ -28,14 +28,6 @@
     }
 
 
-
-
-    echo "<p> $f_name $l_name" ;
-
-
-    
-
-
     // Writing Query to check if username already exists
     $sql = "INSERT INTO user (f_name ,l_name,username,password,email,phone, cnic)
     VALUES ('$f_name', '$l_name', '$username', '$password', '$email', '03315471021', '3520030721157')";
