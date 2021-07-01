@@ -47,8 +47,8 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand ps-5" href="loggedin.php">Real Estate</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-3 pb-3">
+      <a class="navbar-brand ps-5" href="loggedin.php"><h2><i>Real Estate</i></h2></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -86,7 +86,7 @@
     </div>
   </section>
   <div>
-    <div style="width: 50%;" class="container-fluid ms-auto me-auto pt-5">
+    <div style="width: 50%;" class="container-fluid ms-auto me-auto pt-5 pb-5">
       <ul class="nav nav-tabs bg-dark" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="profile-btn nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
@@ -139,7 +139,7 @@
             </div>
 
             <!-- Input Button -->
-            <div class="row mt-3">
+            <div class="mt-3">
               <!-- <div class="col ms-auto me-auto"> -->
               <input class="w-25 btn btn-dark" type="submit" value="Update">
             </div>
@@ -162,7 +162,7 @@
               <label class="form-label" for="ReNewPassword">Re-Enter New Password</label>
               <input class="form-control" type="password" id="OldPassword">
             </div>
-            <div class="row mt-3">
+            <div class="mt-3">
               <!-- <div class="col ms-auto me-auto"> -->
               <input class="w-25 btn btn-dark" type="submit" value="Update">
             </div>

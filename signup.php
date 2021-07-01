@@ -19,8 +19,8 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand ps-5" href="index.php">Real Estate</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  pt-3 pb-3">
+        <a class="navbar-brand ps-5" href="index.php"><h2><i>Real Estate</i></h2></a>
     </nav>
   </header>
   <main class="form-signin">

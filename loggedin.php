@@ -32,44 +32,48 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
       <style>
+        .container-fluid{
+          width:95%;
+        }
         .profile-dropdown {
           padding-right: 4rem;
         }
       </style>
+      <link href="css/btn.css" rel="stylesheet">
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand ps-5" href="loggedin.php">Real Estate</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="profile-dropdown collapse navbar-collapse ms-5" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto pe-5">
-          <li class="navbar-item"><a class="nav-link" href="publish.php">Publish Ad</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Profile
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
-              <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
-              <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
-              <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
-            </ul>
-          </li>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-3 pb-3">
+        <a class="navbar-brand ps-5" href="loggedin.php"><h2><i>Real Estate</i></h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="profile-dropdown collapse navbar-collapse ms-5" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto pe-5">
+            <li class="navbar-item"><a class="nav-link" href="publish.php">Publish Ad</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Profile
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
+                <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
+                <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
+                <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
+              </ul>
+            </li>
 
-          
-          <!-- <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
-          <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li> -->
-        </ul>
-      </div>
-      
-    </nav>
+            
+            <!-- <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
+            <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li> -->
+          </ul>
+        </div>
+        
+      </nav>
   </header>
   
   <!-- Query Section -->
-  <section id="Query" class="m-5 ps-5 pe-5 border border-dark pt-3 pb-3">
+  <section id="Query" class="m-5 ps-5 pe-5 pb-3">
     <h1>Search</h1>
     <form class="row g-3" action="searchads.php" method="POST">
       <div class="col-md-4">
@@ -151,10 +155,11 @@
 
 
       <!-- Input Button -->
-      <div class="row mt-3">
-        <!-- <div class="col ms-auto me-auto"> -->
-        <input class="w-25 btn btn-dark ms-auto me-auto" type="submit" value="Find">
-      </div>
+      <!-- <div class="row mt-3"> -->
+        <div class="col-lg-3">
+        <input class="w-50 btn btn-secondary" type="submit" value="Find">
+        </div>
+      <!-- </div> -->
     </form>
   </section>
 
@@ -162,19 +167,19 @@
   <section id="result">
     <div class="container-fluid">
       <!-- Row 1 of Result -->
-      <div class="row ms-auto me-auto">
+      <div class="row ms-5 me-5">
         <div class="col mb-3">
           <div class="card" style="width: 18rem;">
             <img style="height: 12rem;" src="images/house.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">House In DHA Phase 11</h5>
+              <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="row card-body">
-              <a href="adin.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+            <div class="card-body pt-1 pb-1 ms-auto">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -183,14 +188,14 @@
           <div class="card" style="width: 18rem;">
             <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">House In DHA Phase 11</h5>
+            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="row card-body">
-              <a href="adin.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+            <div class="card-body pt-1 pb-1 ms-auto">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -199,14 +204,14 @@
           <div class="card" style="width: 18rem;">
             <img style="height: 12rem;" src="images/house3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">House In DHA Phase 11</h5>
+            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="row card-body">
-              <a href="adin.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+            <div class="card-body pt-1 pb-1 ms-auto">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -215,14 +220,14 @@
           <div class="card" style="width: 18rem;">
             <img style="height: 12rem;" src="images/house4.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">House In DHA Phase 11</h5>
+            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="row card-body">
-              <a href="adin.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+            <div class="card-body pt-1 pb-1 ms-auto">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -231,14 +236,14 @@
           <div class="card" style="width: 18rem;">
             <img style="height: 12rem;" src="images/house.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">House In DHA Phase 11</h5>
+            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="row card-body">
-              <a href="adin.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+            <div class="card-body pt-1 pb-1 ms-auto">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -247,14 +252,14 @@
           <div class="card" style="width: 18rem;">
             <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">House In DHA Phase 11</h5>
+            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="row card-body">
-              <a href="adin.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+            <div class="card-body pt-1 pb-1 ms-auto">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -263,14 +268,14 @@
           <div class="card" style="width: 18rem;">
             <img style="height: 12rem;" src="images/house3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">House In DHA Phase 11</h5>
+            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="row card-body">
-              <a href="adin.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+            <div class="card-body pt-1 pb-1 ms-auto">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -279,26 +284,21 @@
           <div class="card" style="width: 18rem;">
             <img style="height: 12rem;" src="images/house4.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">House In DHA Phase 11</h5>
+            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="row card-body">
-              <a href="adin.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+            <div class="card-body pt-1 pb-1 ms-auto">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
       </div>
-      <!-- Row 2 Of Result -->
-      <!-- <div class="row ms-auto me-auto mb-3"> -->
-      <!-- pull origin -u master -->
-
-      <!-- </div>     -->
     </div>
-    <div class="d-flex justify-content-center">
-      <button class="btn btn-sm btn-dark ms-auto me-auto">Show More</button>
+    <div class="d-flex justify-content-center mt-5 mb-5">
+      <button class="btn btn-md btn-secondary ms-auto me-auto">Show More</button>
 
     </div>
   </section>
