@@ -28,28 +28,25 @@
 <body>
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand ps-5" href="index.php">Real Estate</a>
+      <a class="navbar-brand ps-5" href="loggedin.php">Real Estate</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="profile-dropdown collapse navbar-collapse ms-5" id="navbarSupportedContent">
+       <div class="profile-dropdown collapse navbar-collapse ms-5" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto pe-5">
-          <li class="navbar-item"><a class="nav-link" href="publish.html">Publish Ad</a></li>
+          <li class="navbar-item"><a class="nav-link" href="publish.php">Publish Ad</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Profile
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
-              <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
-              <li><a class="dropdown-item" href="wishlist.html">Wish List</a></li>
+              <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
+              <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
               <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
             </ul>
           </li>
 
-          
-          <!-- <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
-          <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li> -->
         </ul>
       </div>
       
