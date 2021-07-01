@@ -278,11 +278,6 @@
           </div>
         </div>
       </div>
-      <!-- Row 2 Of Result -->
-      <!-- <div class="row ms-auto me-auto mb-3"> -->
-      <!-- pull origin -u master -->
-
-      <!-- </div>     -->
     </div>
     <div class="d-flex justify-content-center">
       <button class="btn btn-sm btn-dark ms-auto me-auto">Show More</button>
