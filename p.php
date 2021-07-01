@@ -81,8 +81,8 @@ $sc_for_Farm = array('Any');
 
             <!-- Description -->        
             <div class="col-md-8">
-            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" maxlength="250"></textarea>
+            <label for="desc" class="form-label">Description</label>
+            <textarea class="form-control" name="desc" id="desc" rows="8" maxlength="250" ></textarea>
             </div>
 
              <!-- Price & Type -->
