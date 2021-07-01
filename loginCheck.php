@@ -50,14 +50,13 @@ if ($res->num_rows >0 && $res->num_rows == 1) {
 
     echo "User Did sign in successfully";
 
-    } else {
-        header("Location: http://localhost/zameenclone/login.php?error=Error: Either Username or Password entered is Invalid or empty");
-    exit();
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
 
     $conn->close();
     header("Location: index.php");
         exit();
-}
+
 ?>
