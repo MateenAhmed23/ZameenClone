@@ -96,7 +96,7 @@
 
       <!-- Category -->
 
-      <div class="col-md-4">
+      <div class="col-lg-3 col-md-4">
         <label class="form-label" for="category">Category</label>
         <select class="form-select" name="category" id="category">
         <?php
@@ -109,7 +109,7 @@
 
       <!-- Sub- Category -->
 
-      <div class="col-md-4">
+      <div class="col-lg-3 col-md-4">
         <label class="form-label" for="s_category">Sub-Category</label>
         <select class="form-select" name="s_category" id="s_category">
           <?php
@@ -123,7 +123,7 @@
 
       <!-- Minimum Price -->
 
-      <div class="col-md-4">
+      <div class="col-lg-3 col-md-4">
         <label class="form-label" for="min-price">Minimum Price(1000)</label>
         <input class="form-control" type="number" name="min-price" id="min-price" min="1000">
       </div>
@@ -131,7 +131,7 @@
 
       <!-- Maximum Price -->
 
-      <div class="col-md-4">
+      <div class="col-lg-3 col-md-4">
           <label class="form-label" for="max-price">Maximum Price</label>
           <input class="form-control" type="number" name="max-price" id="max-price">
       </div>
@@ -289,7 +289,7 @@
 
   </footer>
 
-  <script type="text/javascript" src="jquery/jquery.js"></script>
+<script type="text/javascript" src="jquery/jquery.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
 

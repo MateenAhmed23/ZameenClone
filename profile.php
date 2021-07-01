@@ -38,7 +38,7 @@
 <body>
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand ps-5" href="index.php">Real Estate</a>
+      <a class="navbar-brand ps-5" href="loggedin.php">Real Estate</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -51,8 +51,8 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
-              <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
-              <li><a class="dropdown-item" href="wishlist.html">Wish List</a></li>
+              <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
               <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
             </ul>
           </li>
@@ -93,7 +93,7 @@
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
               <div class="row card-body">
-                <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
               <div class="row card-body">
-                <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
               <div class="row card-body">
-                <a href="ad.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
+                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
               </div>
             </div>
           </div>
