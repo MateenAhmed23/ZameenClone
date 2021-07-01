@@ -1,5 +1,5 @@
 <?php
-
+session_start();
     include "connection.php";
 
 
@@ -39,7 +39,15 @@
 
 
     if ($conn->query($sql) === TRUE) {
-    echo "User Did sign up successfully";
+    echo "User account sign up successfully";
+    if(isset($_SESSION['username']))
+    {
+        $_SESSION['f_name']=$f_name;
+        $_SESSION['l_name']=$l_name;
+    }
+    ?>
+   <br><a href="http://localhost/zameenclone/index.php">Return to HomePage</a><br>     
+    <?php
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }

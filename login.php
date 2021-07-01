@@ -31,11 +31,18 @@
         <div class="form-floating mb-3">
           <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username or email">
           <label for="floatingInput">Email or Username</label>
+          
         </div>
   
         <div class="form-floating mb-3">
           <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
           <label for="floatingPassword">Password</label>
+          <?php
+          if(isset($_GET["error"]))
+          {
+            echo $_GET["error"];
+          }
+          ?>
         </div>
     
         <div class="checkbox mb-3">
