@@ -30,13 +30,20 @@
   <!-- bootstrap link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <link href="css/index.css" rel="stylesheet">
-  <link href="css/btn.css" rel="stylesheet">
+ 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-
-
+  <link href="css/index.css" rel="stylesheet">
+  <link href="css/btn.css" rel="stylesheet">
+  <style>
+      .container-fluid {
+      width:95%;
+    }
+    .navbar-items {
+      padding-right: 4rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -61,7 +68,6 @@
     <h1>Search</h1>
     <form class="row g-3" action="searchads.php" method="POST">
       <div class="col-md-4">
-
       <!-- Type -->
         <label class="form-label" for="type">Type</label>
         <select class="form-select" name="type" id="type">
@@ -162,8 +168,8 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
-              <a href="ad.php" class="btn btn-secondary card-link">see</a>
+            <div class="card-body pt-1 pb-1">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -178,8 +184,8 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
-              <a href="ad.php" class="btn btn-secondary card-link">see</a>
+            <div class="card-body pt-1 pb-1">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -194,8 +200,8 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
-              <a href="ad.php" class="btn btn-secondary card-link">see</a>
+            <div class="card-body pt-1 pb-1">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -210,8 +216,8 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
-              <a href="ad.php" class="btn btn-secondary card-link">see</a>
+            <div class="card-body pt-1 pb-1">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -226,8 +232,8 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
-              <a href="ad.php" class="btn btn-secondary card-link">see</a>
+            <div class="card-body pt-1 pb-1">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -242,8 +248,8 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
-              <a href="ad.php" class="btn btn-secondary card-link">see</a>
+            <div class="card-body pt-1 pb-1">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -258,8 +264,8 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
-              <a href="ad.php" class="btn btn-secondary card-link">see</a>
+            <div class="card-body pt-1 pb-1">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
@@ -274,15 +280,15 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
-              <a href="ad.php" class="btn btn-secondary card-link">see</a>
+            <div class="card-body pt-1 pb-1">
+              <a href="adin.php" class="btn btn-secondary card-link">see</a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="d-flex justify-content-center mt-5 mb-5">
-      <button class="btn btn-md btn-secondary ms-auto me-auto">Show More</button>
+    <button class="btn btn-md btn-secondary ms-auto me-auto">Show More</button>
 
     </div>
   </section>

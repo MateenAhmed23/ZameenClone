@@ -37,11 +37,18 @@ $res = $conn->query($sql);
 
 
 
+
 if ($res->num_rows >0 &&$res->num_rows ==1) {
     echo "User sign in successful";
     $_SESSION['username']=$userNameOrEmail;
     header("Location: http://localhost/zameenclone/loggedin.php");
     exit();
+
+}
+if ($res->num_rows >0 && $res->num_rows == 1) {
+    
+
+    echo "User Did sign in successfully";
 
     } else {
         header("Location: http://localhost/zameenclone/login.php?error=Error: Either Username or Password entered is Invalid or empty");
@@ -49,6 +56,8 @@ if ($res->num_rows >0 &&$res->num_rows ==1) {
     }
 
 
-
-
+    $conn->close();
+    header("Location: index.php");
+        exit();
+}
 ?>
