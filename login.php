@@ -24,13 +24,13 @@
   </header>
   <main class="form-signin">
     <div class="m-5 p-5">
-      <form>
+      <form method = "POST" action = "loginCheck.php">
       
         <h1 class="h3 mb-3 fw-normal">Sign in</h1>
     
         <div class="form-floating mb-3">
-          <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email address</label>
+          <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username or email">
+          <label for="floatingInput">Email or Username</label>
         </div>
   
         <div class="form-floating mb-3">
