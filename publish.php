@@ -74,7 +74,7 @@ $sc_for_Farm = array('Any');
 
   <section id="PublishAd">
     <h1>Pusblish Ad</h1>
-    <form class="row g-3" action="postad.php" method="POST">
+    <form class="row g-3" action="postad.php" method="POST" enctype="multipart/form-data">
 
       <!-- Title -->
 
@@ -161,19 +161,17 @@ $sc_for_Farm = array('Any');
 
       <!-- File Upload -->
       <div class="input-group mb-3">
-        <input type="file" class="form-control" id="inputGroupFile02" name="files" accept=".jpg,.png,.jpeg" multiple>
         <label class="input-group-text" for="files">Upload</label>
+        <input type="file" class="form-control" id="fileupload" name="files" accept=".jpg,.png,.jpeg">
       </div>
 
       <!-- File Upload Button -->
       <div class="col-md-8">
-        <input class="btn btn-dark" type="submit" value="Publish">
+        <input class="btn btn-dark" type="submit" value="Publish" name="publish">
       </div>
 
 
     </form>
-
-    </div>
 
   </section>
 
