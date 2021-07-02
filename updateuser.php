@@ -31,18 +31,19 @@ $sql = "UPDATE `user`
         `email`='$email',`phone`='$phone'
         where `user_id` = '$user_ID';";
 
-echo "<br>";
-
-print_r($sql);
-
 
 
 $result = $conn->query($sql);
 
 
 if ($conn->query($sql) === TRUE) {
+    $conn->close();
+    header("Location: index.php");
+    exit();
 } else {
-echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    $conn->close();
+    exit();
 }
 
 $conn->close();
