@@ -4,8 +4,8 @@
     
     
 $servername = "localhost";
-$username = "root";
-$password = "root";
+$username = "pma";
+$password = "";
 $db_name = "zameendb";
 
 // Create connection

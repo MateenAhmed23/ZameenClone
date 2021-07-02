@@ -180,6 +180,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -196,6 +199,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -212,6 +218,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -228,6 +237,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -244,6 +256,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -260,6 +275,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -276,6 +294,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -292,6 +313,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
