@@ -1,3 +1,47 @@
+<?php
+
+  // Get userID from session
+  $user_ID = 1;
+
+
+  include "connection.php";
+
+
+  $sql = "SELECT `f_name`, `l_name`, `cnic`, `username`, `email`, `phone` FROM `user` where user_id = '$user_ID'";
+
+
+  
+  $result = $conn->query($sql);
+
+  $f_name = "";
+  $l_name = "";
+  $cnic = "";
+  $username = "";
+  $email = "";
+  $phone = "";
+
+
+  if ($result->num_rows == 1) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      $f_name = $row["f_name"];
+      $l_name = $row["l_name"];
+      $cnic = $row["cnic"];
+      $username = $row["username"];
+      $email = $row["email"];
+      $phone = $row["phone"];
+    }
+  } else {
+    echo "0 results";
+  }
+
+  $conn->close();
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,7 +124,7 @@
           <img class="profile-picture" src="images/profile.png" alt="profile alternative picture">
         </div>
         <div class="col-md-8 pt-3">
-          <h1>Muhammad Muneeb Ur Rahman</h1>
+          <h1><?php  echo $f_name . " " . $l_name;   ?></h1>
         </div>
       </div>
     </div>
@@ -105,37 +149,37 @@
           <form class="row g-3 mt-3" action="" method="POST">
 
             <div class="col-md-6">
-              <label class="form-label" for="FirstName">First Name</label>
-              <input class="form-control" type="text" name="FirstName" id="FirstName">
+              <label class="form-label" for="firstName">First Name</label>
+              <input class="form-control" type="text" name="firstName" id="FirstName" value = "<?php echo $f_name;?>">
 
             </div>
 
             <!-- Cities -->
             <div class="col-md-6">
-              <label class="form-label" for="LastName">Last Name</label>
-              <input class="form-control" type="text" name="LastName" id="LastName">
+              <label class="form-label" for="lastName">Last Name</label>
+              <input class="form-control" type="text" name="lastName" id="LastName" value = "<?php echo $l_name;?>">
 
             </div>
 
             <div class="col-md-6">
               <label class="form-label" for="LastName">Phone Number</label>
               <input class="form-control" type="tel" name="phone" id="floatingPhone" placeholder="+92-331-1234561" pattern="[0]{1}[0-9]{10}"
-                required>
+              value = "<?php echo $phone;?>" required>
             </div>
 
             <div class="col-md-6">
               <label class="form-label" for="cnic">CINC</label>
-              <input class="form-control" type="number" name="cnic" id="cnic" placeholder="XXXXX-XXXXXXX-X">
+              <input class="form-control" type="number" name="cnic" id="cnic" value = "<?php echo $cnic;?>" placeholder="XXXXX-XXXXXXX-X">
             </div>
 
             <div class="col-md-6">
-              <label class="form-label" for="Username">Username</label>
-              <input class="form-control" type="text" id="Username" placeholder="">
+              <label class="form-label" for="username">Username</label>
+              <input class="form-control" type="text" id="Username" placeholder="" value = "<?php echo $username;?>" name="username">
             </div>
 
             <div class="col-md-6">
-              <label class="form-label" for="Email">Email</label>
-              <input class="form-control" type="email" id="Email">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-control" type="email" id="Email" value = "<?php echo $email;?>" name="email">
             </div>
 
             <!-- Input Button -->
