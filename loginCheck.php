@@ -41,7 +41,7 @@ $res = $conn->query($sql);
 if ($res->num_rows >0 &&$res->num_rows ==1) {
     echo "User sign in successful";
     $_SESSION['username']=$userNameOrEmail;
-    header("Location: http://localhost/zameenclone/loggedin.php");
+    header("Location: http://localhost:8080/zameenclone/loggedin.php");
     exit();
 
 }

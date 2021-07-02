@@ -77,7 +77,7 @@ session_start();
         {
           $fname=$_SESSION['f_name'];
           $lname=$_SESSION['l_name'];
-          echo "$fname "." $lname";  
+          echo "<h1>". "$fname "." $lname" . "</h1>";  
         }
         else
         {
