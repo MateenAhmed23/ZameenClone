@@ -1,12 +1,15 @@
 
             <?php
+            session_start();
+            include "connection.php";
 
 
-           $id = (int)$_GET['varname'];
+            
+            $Adid = (int)$_GET['varname'];
+            //echo $Addid;
 
-//  $mAdID = (int)$_GET["adid"];
 //  var_dump($mAdID);
-var_dump($id);
+//var_dump($id);
 
 
 
@@ -66,11 +69,56 @@ var_dump($id);
       
     </nav>
   </header>
+<?php
+$userid=$_SESSION["user_id"];
+$sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
+ inner join user on ad.user_id=user.user_id and user.user_id!=$userid";
+$res=$conn->query($sql);
+$Title="";
+$description="";
+$category="";
+$type="";
+$phone="";
+$price="";
+$email="";
+if($conn->query($sql)==TRUE)
+{
+  while($row = $res->fetch_assoc()) {
+    $Title=$row["ad_title"];
+    //echo "$Title";
+    $description=$row["ad_desc"];
+    $category=$row["category"];
+    $type=$row["ad_type"];
+    $phone=$row["phone"];
+    $email=$row["email"];
+    $price=$row["ad_price"];
+  }
+  echo "ad belong to: "."$email";
+}
+else
+echo"Query error";
 
+
+$sql="SELECT ad_picture.link from ad_picture  inner join ad on ad_picture.ad_id = ad.ad_id and ad_picture.ad_id='$Adid'";
+$result = $conn->query($sql);
+$picturelink="";
+if($conn->query($sql)==TRUE)
+{
+  while($row = $result->fetch_assoc()) {
+    $picturelink=$row["link"];
+  }
+ 
+}
+$conn->close();
+
+?>
 
   <section id="advertisment">
     <div class="advertisment-result container  w-50 border pt-3 pb-3">
-      <h1>Title Of Add</h1>
+    <?php
+    echo"<h1>"."$Title"."</h1>";
+    ?>
+      <!-- <h1>Title Of Add</h1> -->
       <div class="row ms-auto me-auto mb-3">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -80,42 +128,64 @@ var_dump($id);
 
             <!-- loop here for diplaying image -->
             <div class="carousel-item active">
-              <img src="images/house.jpg" class="d-block w-100" alt="...">
+              <img src="<?php echo $picturelink ?>" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item">
+            <!-- <div class="carousel-item">
               <img src="images/house2.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
               <img src="images/house3.jpg" class="d-block w-100" alt="...">
-            </div>
+            </div> -->
             <!-- loop ends here -->
 
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          
+          <!-- Button functionality disabled atm -->
+
+          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          </button> -->
+          <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-          </button>
+          </button> -->
         </div>
       </div>
 
       <div class="row  ms-auto me-auto">
         <div class="col-lg-8 border ">
-          <h2>Description</h2>
+        <?php
+        echo"<h4>"."$description"."</h4>";
+        ?>
+          <!-- <h2>Description</h2> -->
           <p>
             
         </p>
         </div>
         <div class="col-lg-4">
           <ul class="list-group">
-            <li class="list-group-item"><h6>Category</h6></li>
-            <li class="list-group-item"><h6>Type</h6></li>
-            <li class="list-group-item"><h6>0334-0099221</h6></li>
-            <li class="list-group-item"><h6>Price: 1000000</h6></li>
-            <li class="list-group-item btn btn-dark">Message</li>
+            <li class="list-group-item">
+            <?php
+            echo"<h6>Category: "."$category"."</h6>"."</li>";
+            ?>
+            <!-- <h6>Category</h6></li> -->
+            <li class="list-group-item">
+            <?php
+            echo"<h6>Type: "."$type"."</h6>"."</li>";
+            ?>
+            <!-- <h6>Type</h6></li> -->
+            <li class="list-group-item">
+            <!-- <h6>0334-0099221</h6></li> -->
+            <?php
+            echo"<h6>Contact: "."$phone"."</h6>"."</li>";
+            ?>
+            <li class="list-group-item">
+            <!-- <h6>Price: 1000000</h6></li> -->
+            <?php
+            echo"<h6>Price: $"."$price"."</h6>"."</li>";
+            ?>
+            <a href="mailto:<?php echo $email ?>"   class="list-group-item btn btn-dark" >Message</a></li>
           </ul>
         </div>
       </div>
