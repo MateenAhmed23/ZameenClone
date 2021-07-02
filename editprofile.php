@@ -1,13 +1,17 @@
 <?php
-
-// Get userID from session
-$user_ID = 1;
-
-
+session_start();
 include "connection.php";
+// Get userID from session
+$user_ID;
+if(isset($_SESSION["user_id"]))
+  $user_ID = (int)$_SESSION["user_id"]; 
+else
+  echo 'user_id not set';
 
 
-$sql = "SELECT `f_name`, `l_name`, `cnic`, `username`, `email`, `phone` FROM `user` where user_id = '$user_ID'";
+
+
+$sql = "SELECT `f_name`, `l_name`, `cnic`, `username`, `email`, `phone` FROM `user` where ('$user_ID'=user_id)";
 
 
 
@@ -179,11 +183,11 @@ $conn->close();
             <!-- Input Button -->
             <div class="mt-3">
               <!-- <div class="col ms-auto me-auto"> -->
-              <input class="w-25 btn btn-dark" type="submit" value="Update">
+              <input class="w-25 btn btn-dark" type="submit" value="Update"> 
             </div>
           </form>
         </div>
-
+        
 
         <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <h3 class="mt-3">Change Password</h3>

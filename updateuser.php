@@ -1,16 +1,18 @@
 <?php
 
 
-
+session_start();
 include "connection.php";
 
-print_r($_POST);
+//print_r($_POST);
 
 
 // Take userId from session
-
-
-$user_ID = 1;
+$user_ID;
+if(isset($_SESSION["user_id"]))
+  $user_ID = (int)$_SESSION["user_id"]; 
+else
+  echo 'user_id not set';
 
 $f_name = $_POST["firstName"];
 $l_name = $_POST["lastName"];
@@ -21,7 +23,7 @@ $phone = $_POST["phone"];
 
 
 
-print_r($f_name);
+//print_r($f_name);
 
 
 $sql = "UPDATE `user` 
@@ -34,11 +36,9 @@ $sql = "UPDATE `user`
 
 
 $result = $conn->query($sql);
-
-
 if ($conn->query($sql) === TRUE) {
     $conn->close();
-    header("Location: index.php");
+    header("Location: profile.php?msg=Information Updated");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

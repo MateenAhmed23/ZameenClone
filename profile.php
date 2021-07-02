@@ -1,6 +1,40 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include "connection.php";
+//Get userID from session
+$user_ID;
+if(isset($_SESSION["user_id"]))
+  $user_ID = (int)$_SESSION["user_id"]; 
+else
+  echo 'user_id not set';
+
+
+
+
+$sql = "SELECT `f_name`, `l_name` FROM `user` where ('$user_ID'=user_id)";
+
+
+
+$result = $conn->query($sql);
+
+$f_name = "";
+$l_name = "";
+
+if ($result->num_rows >0) {
+  // output data of each row
+  while ($row = $result->fetch_assoc()) {
+    $f_name = $row["f_name"];
+    $l_name = $row["l_name"];
+  }
+
+} else {
+  echo "0 results";
+}
+
+$conn->close();
+
+
 ?>
 <html lang="en">
 
@@ -73,12 +107,8 @@ session_start();
         </div>
         <div class="col-md-8 pt-3">
         <?php
-        if(isset($_SESSION['username']))
-        {
-          $fname=$_SESSION['f_name'];
-          $lname=$_SESSION['l_name'];
-          echo "<h1>". "$fname "." $lname" . "</h1>";  
-        }
+        if(isset($user_ID))
+           echo"<h1>"."$f_name "."$l_name"."</h1>";
         else
         {
         ?>
