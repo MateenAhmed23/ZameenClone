@@ -1,3 +1,19 @@
+
+            <?php
+
+
+           $id = (int)$_GET['varname'];
+
+//  $mAdID = (int)$_GET["adid"];
+//  var_dump($mAdID);
+var_dump($id);
+
+
+
+
+            ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,6 +74,11 @@
       <div class="row ms-auto me-auto mb-3">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
+            <!-- needs to be dynamic -->
+
+
+
+            <!-- loop here for diplaying image -->
             <div class="carousel-item active">
               <img src="images/house.jpg" class="d-block w-100" alt="...">
             </div>
@@ -67,6 +88,8 @@
             <div class="carousel-item">
               <img src="images/house3.jpg" class="d-block w-100" alt="...">
             </div>
+            <!-- loop ends here -->
+
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -78,12 +101,13 @@
           </button>
         </div>
       </div>
+
       <div class="row  ms-auto me-auto">
         <div class="col-lg-8 border ">
           <h2>Description</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-          </p>
+            
+        </p>
         </div>
         <div class="col-lg-4">
           <ul class="list-group">
