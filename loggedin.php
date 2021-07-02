@@ -1,4 +1,5 @@
 <?php
+// donot need
   $type = array('Buy', 'Rent');
 
   $cities = array('Lahore', 'Karachi' , 'Islamabad', 'Peshawar', 'Quetta', 'Muzaffarabad');

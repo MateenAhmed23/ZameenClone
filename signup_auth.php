@@ -40,14 +40,7 @@ session_start();
 
     if ($conn->query($sql) === TRUE) {
     echo "User account sign up successfully";
-    if(isset($_SESSION['username']))
-    {
-        $_SESSION['f_name']=$f_name;
-        $_SESSION['l_name']=$l_name;
-    }
-    ?>
-   <br><a href="http://localhost/zameenclone/index.php">Return to HomePage</a><br>     
-    <?php
+    header("location: login.php");
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }
