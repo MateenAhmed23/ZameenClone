@@ -7,6 +7,7 @@ include "connection.php";
 $userNameOrEmail = $_POST["username"];
 $password = $_POST["password"];
 
+
 $sql = "SELECT email,username,user_id,password from user where
 ('$userNameOrEmail'=email AND '$password'=password)
 OR 
@@ -19,12 +20,22 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
       $userID=(int)$row["user_id"];
+      $userNameOrEmail=$row["username"];
+      $password=$row["password"];
     }
     $_SESSION["user_id"]=$userID;
     echo "User sign in successful";
     //$_SESSION['username']=$userNameOrEmail;
     header("Location: index.php");
+    $conn->close();
     exit();
+}
+else
+{
+  $conn->close();
+  header("Location: login.php?error= Invalid Username or password or if your don't have an account please sign up!");
+  exit();
+
 }
 
 

@@ -21,10 +21,21 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark  pt-3 pb-3">
         <a class="navbar-brand ps-5" href="index.php"><h2><i>Real Estate</i></h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-items collapse navbar-collapse ms-5" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto pe-5">
+        <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
   <main class="form-signin">
-
+<?php
+if(isset($_GET["error"]))
+echo $_GET["error"];
+?>
     <div class="m-5 p-5">
       <form method="POST" action="signup_auth.php">
       

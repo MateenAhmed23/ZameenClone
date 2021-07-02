@@ -20,7 +20,16 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-3 pb-3">
         <a class="navbar-brand ps-5" href="index.php"><h2><i>Real Estate</i></h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-items collapse navbar-collapse ms-5" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto pe-5">
+        <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
+        </ul>
+      </div>
     </nav>
+   
   </header>
   <main class="form-signin">
     <div class="m-5 p-5">
@@ -37,21 +46,21 @@
         <div class="form-floating mb-3">
           <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
           <label for="floatingPassword">Password</label>
-          <?php
+        </div>
+    
+        <!-- <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" name="remember-me" value="remember-me"> Remember me
+          </label>
+        </div> -->
+  
+        <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+        <?php
           if(isset($_GET["error"]))
           {
             echo $_GET["error"];
           }
           ?>
-        </div>
-    
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" name="remember-me" value="remember-me"> Remember me
-          </label>
-        </div>
-  
-        <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
         
       </form>
