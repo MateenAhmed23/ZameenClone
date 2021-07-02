@@ -1,5 +1,5 @@
 <?php
-
+session_start();
     include "connection.php";
 
 
@@ -39,8 +39,14 @@
 
 
     if ($conn->query($sql) === TRUE) {
-    echo "User Did sign up successfully";
+    echo "User account sign up successfully";
+    header("location: login.php");
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+    $conn->close();
+
+        
+    exit();
 ?>

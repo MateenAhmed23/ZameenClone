@@ -1,5 +1,5 @@
 <?php
-
+// donot need
   $type = array('Buy', 'Rent');
 
   $cities = array('Lahore', 'Karachi' , 'Islamabad', 'Peshawar', 'Quetta', 'Muzaffarabad');
@@ -59,7 +59,7 @@
                 <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
                 <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
                 <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
-                <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
+                <li><a class="dropdown-item" href="Signout.php">Sign Out</a></li>
               </ul>
             </li>
 
@@ -178,8 +178,11 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
+            <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -194,8 +197,11 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
+            <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -210,8 +216,11 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
+            <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -226,8 +235,11 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
+            <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -242,8 +254,11 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
+            <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -258,8 +273,11 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
+            <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -274,8 +292,11 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
+            <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -290,8 +311,11 @@
               <li class="list-group-item"><b>Price: </b>10000000</li>
               <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
             </ul>
-            <div class="card-body pt-1 pb-1 ms-auto">
+            <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -308,7 +332,7 @@
 
   </footer>
   <script type="text/javascript" src="jquery/jquery.js"></script>
-<script type="text/javascript">
+  <script type="text/javascript">
   $(document).ready(function(){
 
   	$("#category").on("change",function(){

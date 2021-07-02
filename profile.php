@@ -1,4 +1,41 @@
 <!DOCTYPE html>
+<?php
+session_start();
+include "connection.php";
+//Get userID from session
+$user_ID;
+if(isset($_SESSION["user_id"]))
+  $user_ID = (int)$_SESSION["user_id"]; 
+else
+  echo 'user_id not set';
+
+
+
+
+$sql = "SELECT `f_name`, `l_name` FROM `user` where ('$user_ID'=user_id)";
+
+
+
+$result = $conn->query($sql);
+
+$f_name = "";
+$l_name = "";
+
+if ($result->num_rows >0) {
+  // output data of each row
+  while ($row = $result->fetch_assoc()) {
+    $f_name = $row["f_name"];
+    $l_name = $row["l_name"];
+  }
+
+} else {
+  echo "0 results";
+}
+
+$conn->close();
+
+
+?>
 <html lang="en">
 
 <head>
@@ -56,7 +93,6 @@
               <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
             </ul>
           </li>
-
         </ul>
       </div>
       
@@ -70,7 +106,19 @@
           <img class="profile-picture" src="images/profile.png" alt="profile alternative picture">
         </div>
         <div class="col-md-8 pt-3">
-          <h1>Muhammad Muneeb Ur Rahman</h1>
+        <?php
+        if(isset($user_ID))
+           echo"<h1>"."$f_name "."$l_name"."</h1>";
+        else
+        {
+        ?>
+          <h1> No session name</h1>
+        <?php
+        }?>
+       
+        
+        
+  
         </div>
       </div>
     </div>
@@ -92,8 +140,8 @@
                 <li class="list-group-item"><b>Price: </b>10000000</li>
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
-              <div class="row card-body">
-                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
+              <div class="card-body">
+                <a href="publish.php" class="btn btn-dark me-auto card-link">Edit</a>
               </div>
             </div>
           </div>
@@ -108,8 +156,8 @@
                 <li class="list-group-item"><b>Price: </b>10000000</li>
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
-              <div class="row card-body">
-                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
+              <div class="card-body">
+                <a href="publish.php" class="btn btn-dark me-auto card-link">Edit</a>
               </div>
             </div>
           </div>
@@ -124,8 +172,8 @@
                 <li class="list-group-item"><b>Price: </b>10000000</li>
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
-              <div class="row card-body">
-                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
+              <div class="card-body">
+                <a href="publish.php" class="btn btn-dark card-link">Edit</a>
               </div>
             </div>
           </div>
