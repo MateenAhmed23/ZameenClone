@@ -56,7 +56,6 @@
               <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
             </ul>
           </li>
-
         </ul>
       </div>
       
