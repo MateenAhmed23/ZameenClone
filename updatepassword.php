@@ -5,7 +5,6 @@ session_start();
 include "connection.php";
 
 
-
 // Take userId from session
 $user_ID;
 if(isset($_SESSION["user_id"]))
@@ -42,7 +41,7 @@ if ($result->num_rows == 1) {
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
     $conn->close();
-    header("Location: profile.php?msg=Information Updated");
+    header("Location: editprofile.php?msg=Password Updated");
     exit();
 } else {
     $conn->close();

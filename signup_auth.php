@@ -42,7 +42,7 @@ session_start();
     echo "User account sign up successfully";
     header("location: login.php");
     } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    header("location: signup.php?error= This account already exists!! log in to continue");
     }
 
     $conn->close();

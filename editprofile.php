@@ -140,7 +140,10 @@ $conn->close();
           <button class="profile-btn nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Password</button>
         </li>
       </ul>
-
+<?php
+if(isset($_GET["msg"]))
+echo $_GET["msg"];
+?>
       <!-- Tab panes -->
       <div class="tab-content">
         <div class="tab-pane active mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
