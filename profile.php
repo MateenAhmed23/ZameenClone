@@ -111,8 +111,8 @@ session_start();
                 <li class="list-group-item"><b>Price: </b>10000000</li>
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
-              <div class="row card-body">
-                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
+              <div class="card-body">
+                <a href="publish.php" class="btn btn-dark me-auto card-link">Edit</a>
               </div>
             </div>
           </div>
@@ -127,8 +127,8 @@ session_start();
                 <li class="list-group-item"><b>Price: </b>10000000</li>
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
-              <div class="row card-body">
-                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
+              <div class="card-body">
+                <a href="publish.php" class="btn btn-dark me-auto card-link">Edit</a>
               </div>
             </div>
           </div>
@@ -143,8 +143,8 @@ session_start();
                 <li class="list-group-item"><b>Price: </b>10000000</li>
                 <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
               </ul>
-              <div class="row card-body">
-                <a href="publish.php" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit</a>
+              <div class="card-body">
+                <a href="publish.php" class="btn btn-dark card-link">Edit</a>
               </div>
             </div>
           </div>

@@ -67,12 +67,10 @@
   <section id="Query" class="m-5 ps-5 pe-5 pb-3">
     <h1>Search</h1>
     <form class="row g-3" action="searchads.php" method="POST">
-      <div class="col-md-4">
       <!-- Type -->
+      <div class="col-md-4">
         <label class="form-label" for="type">Type</label>
         <select class="form-select" name="type" id="type">
-          <!-- <option value="buy">Buy</option>
-          <option value="rent">Rent</option> -->
         <?php
           foreach ($type as $value) {
               echo "<option value='$value'>$value</option>";
@@ -93,16 +91,13 @@
         </select>
       </div>
 
-
       <!-- Location -->
-
       <div class="col-md-4">
         <label class="form-label" for="location">Location</label>
         <input class="form-control" type="text" name="location" id="location" maxlength="50">
       </div>
 
       <!-- Category -->
-
       <div class="col-lg-3 col-md-4">
         <label class="form-label" for="category">Category</label>
         <select class="form-select" name="category" id="category">
@@ -115,7 +110,6 @@
       </div>
 
       <!-- Sub- Category -->
-
       <div class="col-lg-3 col-md-4">
         <label class="form-label" for="s_category">Sub-Category</label>
         <select class="form-select" name="s_category" id="s_category">
@@ -127,29 +121,22 @@
         </select>
       </div>
 
-
       <!-- Minimum Price -->
-
       <div class="col-lg-3 col-md-4">
         <label class="form-label" for="min-price">Minimum Price(1000)</label>
         <input class="form-control" type="number" name="min-price" id="min-price" min="1000">
       </div>
 
-
       <!-- Maximum Price -->
-
       <div class="col-lg-3 col-md-4">
           <label class="form-label" for="max-price">Maximum Price</label>
           <input class="form-control" type="number" name="max-price" id="max-price">
       </div>
 
-
       <!-- Input Button -->
-      <!-- <div class="row mt-3"> -->
-        <div class="col-lg-3">
+      <div class="col-lg-3">
         <input class="w-50 btn btn-secondary" type="submit" value="Find">
-        </div>
-      <!-- </div> -->
+      </div>
     </form>
   </section>
 
@@ -170,6 +157,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -186,6 +176,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -202,6 +195,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -218,6 +214,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -234,6 +233,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -250,6 +252,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -266,6 +271,9 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
@@ -282,19 +290,22 @@
             </ul>
             <div class="card-body pt-1 pb-1">
               <a href="adin.php" class="btn btn-secondary card-link">see</a>
+              <a href="" class="btn btn-secondary cark-link">
+                <img class="mb-1" src="star.ico">
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center mt-5 mb-5">
-    <button class="btn btn-md btn-secondary ms-auto me-auto">Show More</button>
 
+    <!-- Show More Button -->
+    <div class="d-flex justify-content-center mt-5 mb-5">
+     <button class="btn btn-md btn-secondary ms-auto me-auto">Show More</button>
     </div>
   </section>
 
   <footer>
-
   </footer>
 
 <script type="text/javascript" src="jquery/jquery.js"></script>
@@ -304,12 +315,9 @@
   	$("#category").on("change",function(){
 
   		var category = $("#category").val();
-
-
       // Please change arrays if there are changes in sub categories.... THEY ARE NOT DYNAMMIC
 
       let txt = "";
-
       if (category === 'House')
       {
         var House = ['Any', 'Basement', 'Ground Floor', 'First Floor'];
