@@ -2,7 +2,10 @@
 session_start();
 include "connection.php";
 
-
+$email="SELECT email from user where 
+('$userNameOrEmail'=email AND '$password'=password)
+OR 
+('$userNameOrEmail' = username AND '$password'=password)";
 
 $userNameOrEmail = $_POST["username"];
 $password = $_POST["password"];
@@ -24,6 +27,8 @@ if ($result->num_rows > 0) {
       $password=$row["password"];
     }
     $_SESSION["user_id"]=$userID;
+    if(isset($email))
+    $_SESSION["email"]=$email;
     echo "User sign in successful";
     //$_SESSION['username']=$userNameOrEmail;
     header("Location: index.php");

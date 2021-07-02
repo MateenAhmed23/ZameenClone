@@ -1,5 +1,6 @@
 <?php
 
+    session_start();
     include "connection.php";
 
 
@@ -20,7 +21,7 @@
         $s_category = $_POST["s_category"];
 
 
-        $user_Id = 1;
+        $user_Id = $_SESSION["user_id"];
 
 
         // Writing Query to check if username already exists

@@ -70,8 +70,8 @@
           // i need join two tables
 
           $linkOFPicture = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
-    WHERE (ad.ad_area='DHA'
-     AND ad.ad_type = 'Buy' and ad.category = 'House'
+    WHERE (ad.ad_area='$location'
+     AND ad.ad_type = '$type' and ad.category = '$category'
      and ad.ad_price between '$min_price' and '$max_price');";
         } else {
 
@@ -79,8 +79,8 @@
 and '$s_category' = sub_category and ad_price between '$min_price'and '$max_price'";
 
           $linkOFPicture = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
-WHERE (ad.ad_area='DHA'
- AND ad.ad_type = 'Buy' and ad.category = 'House' and '$s_category' = sub_category
+WHERE (ad.ad_area='$location'
+ AND ad.ad_type = '$type' and ad.category = '$category' and '$s_category' = sub_category
  and ad.ad_price between '$min_price' and '$max_price');";
 
           //$pulisherContactInfo = "SELECT phone from user where '$sql['user_id']'=user_id;"
