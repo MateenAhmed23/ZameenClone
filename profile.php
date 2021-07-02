@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -70,7 +73,23 @@
           <img class="profile-picture" src="images/profile.png" alt="profile alternative picture">
         </div>
         <div class="col-md-8 pt-3">
-          <h1>Muhammad Muneeb Ur Rahman</h1>
+        <?php
+        if(isset($_SESSION['username']))
+        {
+          $fname=$_SESSION['f_name'];
+          $lname=$_SESSION['l_name'];
+          echo "$fname "." $lname";  
+        }
+        else
+        {
+        ?>
+          <h1> No session name</h1>
+        <?php
+        }?>
+       
+        
+        
+  
         </div>
       </div>
     </div>
