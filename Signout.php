@@ -11,7 +11,10 @@ session_unset();
 
 // destroy the session
 session_destroy();
+header("location: index.php");
+exit();
 ?>
+
 
 </body>
 </html>
