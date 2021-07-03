@@ -6,8 +6,10 @@ include "connection.php";
 $user_ID;
 if(isset($_SESSION["user_id"]))
   $user_ID = (int)$_SESSION["user_id"]; 
-else
+else{
   echo 'user_id not set';
+  header("Location: login.php?msg=Please login to continue");
+}
 
 
 
@@ -31,6 +33,38 @@ if ($result->num_rows >0) {
 } else {
   echo "0 results";
 }
+
+
+
+// Get the ads published by the user
+
+$sql = "SELECT `ad_id`,`ad_title`,`ad_price` FROM `ad` WHERE `user_id` = '$user_ID'";
+
+
+$result = $conn->query($sql);
+
+//Saving number of ads user has published
+$No_of_ads = $result->num_rows;
+
+
+//Array of information
+
+$ad_id = array();
+$titles = array();
+$prices = array();
+
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    array_push($ad_id , $row["ad_id"]);
+    array_push($titles , $row["ad_title"]);
+    array_push($prices , $row["ad_price"]);
+  }
+
+}
+
+//Array made.
 
 $conn->close();
 
@@ -114,6 +148,7 @@ $conn->close();
         ?>
           <h1> No session name</h1>
         <?php
+          //Lead back to sign up page to login the user???
         }?>
        
         
