@@ -244,7 +244,7 @@ if(isset($_POST["findB"]))
             $imageaddress = $picture["link"];
             $title = $row["ad_title"];
             $price = $row["ad_price"];
-
+            $AdId=$row["ad_id"];
           ?>
 
           <div class="col mb-3">
@@ -257,7 +257,7 @@ if(isset($_POST["findB"]))
                 <li class="list-group-item"><b>Price: </b><?php echo $price?></li>
               </ul>
               <div class="card-body pt-1 pb-1">
-                <a href="adin.php" class="btn btn-secondary card-link">see</a>
+                <a href="adin.php?varname=<?php echo $AdId ?>" class="btn btn-secondary card-link">see</a>
                 <a href="" class="btn btn-secondary cark-link">
                   <img class="mb-1" src="star.ico">
                 </a>
