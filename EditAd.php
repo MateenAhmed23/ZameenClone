@@ -1,4 +1,23 @@
 <?php
+$ad_id;
+if(isset($_GET["varname"]))
+{
+    $ad_id=(int)$_GET["varname"];
+    echo $ad_id;
+}
+else
+echo "ad_id not received";
+$sql= "SELECT * from ad where '$ad_id'= ad_id";
+$Result = $conn->query($sql);
+if($Result->num_rows>0)
+{
+    while ($row = $Result->fetch_assoc())
+    {
+        
+    }
+}
+?>
+<?php
 
 $type = array('Buy', 'Rent');
 
@@ -39,6 +58,15 @@ $sc_for_Farm = array('Any');
     </style>
 
     <script src="jquery/publish.js"></script>
+
+    <script>
+$(document).ready(function() {    
+    $("#fname").val("Joe"); 
+    $("#lname").val("Bean"); 
+    $("#title").val("Boss");
+});
+</script>
+
     <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 </head>
 

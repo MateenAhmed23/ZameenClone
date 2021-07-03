@@ -188,8 +188,14 @@ echo $_GET["msg"];
               <!-- <div class="col ms-auto me-auto"> -->
               <input class="w-25 btn btn-dark" type="submit" value="Update"> 
             </div>
+            <div class="mt-3">
+            <a href="deleteuser.php?del=<?php echo $user_ID;?>" class="w-25 btn btn-dark">Delete Account</a>
+            </div>
           </form>
+          
+         
         </div>
+        
         
 
         <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
