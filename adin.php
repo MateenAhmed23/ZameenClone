@@ -93,7 +93,7 @@ if($conn->query($sql)==TRUE)
     $email=$row["email"];
     $price=$row["ad_price"];
   }
-  echo "ad belong to: "."$email";
+ // echo "ad belong to: "."$email";
 }
 else
 echo"Query error";
