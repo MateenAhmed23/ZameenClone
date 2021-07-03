@@ -10,9 +10,8 @@ else{
   header("Location: login.php?msg=Please login to continue");
 }
 
-
 //Getting all the ad_ids which the user has starred;
-
+//$ads=(int)$_GET["ad_id"];
 $sql = "SELECT `ad_id` FROM `starred_ad` WHERE `user_id` = '$user_ID'";
 
 
@@ -32,8 +31,22 @@ if ($result->num_rows > 0) {
     array_push($ad_id , $row["ad_id"]);
   }
 }
+$PictureLink = array();
+for ($i=0;$i<$No_of_ads;$i++)
+{
+  $sql="SELECT ad_picture.link from `ad_picture` inner join `starred_ad` on ad_picture.ad_id = starred_ad.ad_id and starred_ad.ad_id='$ad_id[$i]'";
+  $res = $conn->query($sql);
+  if($res->num_rows>0)
+  {
+    while ($row=$res->fetch_assoc())
+      array_push($PictureLink,$row["link"]);
+  }
+  else
+    echo "query not successful";
+}
 
 // All ads saved
+
 
 
 
@@ -97,7 +110,7 @@ $conn->close();
 <body>
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-3 pb-3">
-      <a class="navbar-brand ps-5" href="loggedin.php"><h2><i>Real Estate</i></h2></a>
+      <a class="navbar-brand ps-5" href="index.php"><h2><i>Real Estate</i></h2></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -137,7 +150,7 @@ $conn->close();
         ?>
         <div class="col-lg-4 col-md-6 mb-3">
           <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
+            <img style="height: 12rem;" src=<?php echo $PictureLink[$i] ?> class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><?php echo $titles[$i]  ?></h5>
             </div>
