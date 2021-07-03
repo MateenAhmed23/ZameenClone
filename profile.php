@@ -39,6 +39,9 @@ if ($result->num_rows > 0) {
 
 $sql = "SELECT `ad_id`,`ad_title`,`ad_price` FROM `ad` WHERE `user_id` = '$user_ID'";
 
+//$linkofPictures = "SELECT link from ad left join ad "
+$LINK_Picture   = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
+WHERE ('$user_ID'= ad.user_id)";
 
 $result = $conn->query($sql);
 
@@ -63,11 +66,14 @@ if ($result->num_rows > 0) {
 }
 
 //Array made.
+$PictureLink="SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
+WHERE ('$user_ID'= ad.user_id)";
+  $res = $conn->query($PictureLink);
+
 $PictureLink = array();
 for ($i=0;$i<$No_of_ads;$i++)
 {
-  $sql="SELECT ad_picture.link from ad_picture  inner join ad on ad_picture.ad_id = ad.ad_id and ad_picture.ad_id='$ad_id[$i]'";
-  $res = $conn->query($sql);
+
   if($res->num_rows>0)
   {
     while ($row=$res->fetch_assoc())
