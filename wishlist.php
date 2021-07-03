@@ -161,8 +161,8 @@ $conn->close();
             </ul>
             <div class="row card-body">
               <a href="adin.php?varname= <?php  echo $ad_id[$i]  ?>" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
-              <a href="" class="btn btn-secondary cark-link">
-              <img class="mb-1" src="star.ico">
+              <!-- <a href="" class="btn btn-secondary cark-link"> -->
+              <!-- <img class="mb-1" src="star.ico"> -->
               </a>
             </div>
           </div>
