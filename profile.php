@@ -63,6 +63,22 @@ if ($result->num_rows > 0) {
 }
 
 //Array made.
+$PictureLink = array();
+for ($i=0;$i<$No_of_ads;$i++)
+{
+  $sql="SELECT ad_picture.link from ad_picture  inner join ad on ad_picture.ad_id = ad.ad_id and ad_picture.ad_id='$ad_id[$i]'";
+  $res = $conn->query($sql);
+  if($res->num_rows>0)
+  {
+    while ($row=$res->fetch_assoc())
+      array_push($PictureLink,$row["link"]);
+  }
+  else
+    echo "query not successful";
+}
+
+
+
 
 $conn->close();
 
@@ -170,7 +186,7 @@ $conn->close();
           ?>
             <div class="col-lg-4 col-md-6 mb-3">
               <div class="card" style="width: 18rem;">
-                <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
+                <img style="height: 12rem;" src="<?php echo $PictureLink[$i] ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $titles[$i];  ?></h5>
                 </div>

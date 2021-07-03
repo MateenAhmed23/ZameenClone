@@ -6,7 +6,7 @@
 
             
             $Adid = (int)$_GET['varname'];
-            //echo $Addid;
+            //echo $Adid;
 
 //  var_dump($mAdID);
 //var_dump($id);
@@ -72,7 +72,7 @@
 <?php
 $userid=$_SESSION["user_id"];
 $sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
- inner join user on ad.user_id=user.user_id and user.user_id!=$userid";
+ inner join user on ad.user_id=user.user_id and ad.ad_id='$Adid'";
 $res=$conn->query($sql);
 $Title="";
 $description="";
