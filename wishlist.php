@@ -31,11 +31,14 @@ if ($result->num_rows > 0) {
     array_push($ad_id , $row["ad_id"]);
   }
 }
+$PictureLink="SELECT ad_picture.link FROM `ad_picture` left join  `starred_ad` on  starred_ad.ad_id = ad_picture.ad_id
+WHERE ('$user_ID'= starred_ad.user_id)";
+  $res = $conn->query($PictureLink);
+
 $PictureLink = array();
 for ($i=0;$i<$No_of_ads;$i++)
 {
-  $sql="SELECT ad_picture.link from `ad_picture` inner join `starred_ad` on ad_picture.ad_id = starred_ad.ad_id and starred_ad.ad_id='$ad_id[$i]'";
-  $res = $conn->query($sql);
+
   if($res->num_rows>0)
   {
     while ($row=$res->fetch_assoc())
@@ -44,7 +47,6 @@ for ($i=0;$i<$No_of_ads;$i++)
   else
     echo "query not successful";
 }
-
 // All ads saved
 
 
@@ -150,7 +152,7 @@ $conn->close();
         ?>
         <div class="col-lg-4 col-md-6 mb-3">
           <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src=<?php echo $PictureLink[$i] ?> class="card-img-top" alt="...">
+            <img style="height: 12rem;" src="<?php echo $PictureLink[$i] ?>" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><?php echo $titles[$i]  ?></h5>
             </div>
