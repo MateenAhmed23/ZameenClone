@@ -1,5 +1,34 @@
 <?php
 
+include"connection.php";
+$ad_id;
+if(isset($_GET["varname"]))
+{
+    $ad_id=(int)$_GET["varname"];
+    echo $ad_id;
+}
+else
+echo "ad_id not received";
+$sql= "SELECT * from ad where '$ad_id'= ad_id";
+$Result = $conn->query($sql);
+$res = $Result->fetch_assoc();
+var_dump($res);
+$title = $res['ad_title'];
+$area = $res['ad_area'];
+$price = $res['ad_price'];
+$city = $res['ad_city'];
+
+$desc = $res['ad_desc'];
+
+$type = $res['ad_type'];
+$cat = $res['category'];
+$sb_cat = $res['sub_category'];
+
+
+
+?>
+<?php
+
 $type = array('Buy', 'Rent');
 
 $cities = array('Lahore', 'Karachi', 'Islamabad', 'Peshawar', 'Quetta', 'Muzaffarabad');
@@ -39,6 +68,15 @@ $sc_for_Farm = array('Any');
     </style>
 
     <script src="jquery/publish.js"></script>
+
+    <script>
+$(document).ready(function() {    
+    $("#fname").val("Joe"); 
+    $("#lname").val("Bean"); 
+    $("#title").val("Boss");
+});
+</script>
+
     <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 </head>
 
@@ -71,26 +109,27 @@ $sc_for_Farm = array('Any');
   </header>
 
     <section id="PublishAd">
-        <h1>Pusblish Ad</h1>
-        <form class="row g-3" action="postad.php" method="POST" enctype="multipart/form-data">
+        <h1>Edit Ad</h1>
+        <form class="row g-3" action="EditAd.php" method="POST" enctype="multipart/form-data">
             <!-- Title -->
             <div class="col-md-12">
                 <label class="form-label" for="title">Title of Ad</label>
-                <input class="form-control" type="text" name="title" id="title" maxlength="50">
+                <input class="form-control" type="text" name="title" id="title" value = "<?php echo $title?>" maxlength="50">
             </div>
 
             <!-- Description -->        
             <div class="col-md-8">
-            <label class="form-label" for="desc">Description</label>
-            <textarea class="form-control"type="text" name="desc" id="desc" rows="8" maxlength="250"></textarea>
+            <label class="form-label" for="desc" value = "<?php echo $desc?>" >Description</label>
+            <textarea class="form-control"type="text" name="desc" id="desc"  rows="8" maxlength="250"><?php echo $desc?></textarea>
+            
             </div>
 
              <!-- Price & Type -->
             <div class="col-md-4">
                 <label class="form-label" for="price">Price (Minimum: 1000)</label>
-                <input class="form-control" type="number" name="price" id="price" min="1000">
+                <input class="form-control" type="number" name="price" id="price" value = "<?php echo $price?>" min="1000">
                 <label class="form-label mt-2" for="type">Type</label>
-                <select class="form-select" name="type" id="type">
+                <select class="form-select" name="type" id="type" >
                     <?php
                     foreach ($type as $value) {
                         echo "<option value='$value'>$value</option>";
@@ -103,13 +142,13 @@ $sc_for_Farm = array('Any');
             <!-- Location -->
             <div class="col-md-8">
                 <label class="form-label" for="location">Location</label>
-                <input class="form-control" type="text" name="location" id="location" maxlength="50">
+                <input class="form-control" type="text" name="location" value = "<?php echo $area?>" id="location" maxlength="50">
             </div>
 
             <!-- Cities -->
             <div class="col-md-4">
                 <label class="form-label" for="cities">Cities</label>
-                <select class="form-select" name="cities" id="cities">
+                <select class="form-select" name="cities" id="cities" value = "<?php echo $city?>">
                     <?php
                     foreach ($cities as $value) {
                         echo "<option value='$value'>$value</option>";
@@ -122,7 +161,7 @@ $sc_for_Farm = array('Any');
             <!-- Category -->
             <div class="col-md-8">
                 <label class="form-label" for="category">Category</label>
-                <select class="form-select" name="category" id="category">
+                <select class="form-select" name="category" id="category" value = "<?php echo $cat?>">
                     <?php
                     foreach ($category as $value) {
                         echo "<option value='$value'>$value</option>";
@@ -135,7 +174,7 @@ $sc_for_Farm = array('Any');
             <!-- Sub- Category -->
             <div class="col-md-4">
                 <label class="form-label" for="s_category">Sub-Category</label>
-                <select class="form-select" name="s_category" id="s_category">
+                <select class="form-select" name="s_category" id="s_category" value = "<?php echo $sub_cat?>">
                     <?php
                     foreach ($sc_for_House as $value) {
                         echo "<option value='$value'>$value</option>";
@@ -153,7 +192,7 @@ $sc_for_Farm = array('Any');
 
             <!-- File Upload Button -->
             <div class="col-md-8">
-                <input class="btn btn-dark" type="submit" value="Publish" name="publish">
+                <input class="btn btn-dark" type="submit" value="Re-Publish" name="publish">
             </div>
 
 
