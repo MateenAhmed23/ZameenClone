@@ -5,8 +5,8 @@
     
 $servername = "localhost";
 $username = "root";
-$password = "root";
-$db_name = "Zameendb";
+$password = "umair8917";
+$db_name = "zameenclone";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db_name);

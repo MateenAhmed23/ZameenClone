@@ -14,6 +14,8 @@ session_start();
 
   $sc_for_Farm = array('Any');
 
+  $find = 0;
+
 ?>
 
 
@@ -89,7 +91,7 @@ session_start();
   <!-- Query Section -->
   <section id="Query" class="m-5 ps-5 pe-5 pb-3">
     <h1>Search</h1>
-    <form class="row g-3" action="searchads.php" method="POST">
+    <form class="row g-3" action="index.php" method="POST">
       <!-- Type -->
       <div class="col-md-4">
         <label class="form-label" for="type">Type</label>
@@ -158,176 +160,125 @@ session_start();
 
       <!-- Input Button -->
       <div class="col-lg-3">
-        <input class="w-50 btn btn-secondary" type="submit" value="Find">
+        <input class="w-50 btn btn-secondary" type="submit" value="Find" name = "findB">
       </div>
     </form>
   </section>
 
-  <!-- Result Section -->
-  <section id="result">
-    <div class="container-fluid">
-      <!-- Row 1 of Result -->
-      <div class="row ms-5 me-5">
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b>10000000</li>
-              <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php" class="btn btn-secondary card-link">see</a>
-              <a href="" class="btn btn-secondary cark-link">
-                <img class="mb-1" src="star.ico">
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b>10000000</li>
-              <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php" class="btn btn-secondary card-link">see</a>
-              <a href="" class="btn btn-secondary cark-link">
-                <img class="mb-1" src="star.ico">
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b>10000000</li>
-              <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php" class="btn btn-secondary card-link">see</a>
-              <a href="" class="btn btn-secondary cark-link">
-                <img class="mb-1" src="star.ico">
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house4.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b>10000000</li>
-              <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php" class="btn btn-secondary card-link">see</a>
-              <a href="" class="btn btn-secondary cark-link">
-                <img class="mb-1" src="star.ico">
-              </a>
-            </div>
-          </div>
-        </div>
+<?php
 
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b>10000000</li>
-              <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php" class="btn btn-secondary card-link">see</a>
-              <a href="" class="btn btn-secondary cark-link">
-                <img class="mb-1" src="star.ico">
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b>10000000</li>
-              <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php" class="btn btn-secondary card-link">see</a>
-              <a href="" class="btn btn-secondary cark-link">
-                <img class="mb-1" src="star.ico">
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b>10000000</li>
-              <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php" class="btn btn-secondary card-link">see</a>
-              <a href="" class="btn btn-secondary cark-link">
-                <img class="mb-1" src="star.ico">
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="images/house4.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title mt-0 mb-0">House In DHA Phase 11</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b>10000000</li>
-              <li class="list-group-item"><b>Contact: </b>0333-1233211</li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php" class="btn btn-secondary card-link">see</a>
-              <a href="" class="btn btn-secondary cark-link">
-                <img class="mb-1" src="star.ico">
-              </a>
+
+if(isset($_POST["findB"]))
+{
+ 
+
+  include "connection.php";
+
+
+  $type = $_POST["type"];
+
+  $city = $_POST["cities"];
+  $location = $_POST["location"];
+  $category = $_POST["category"];
+  $s_category = $_POST["s_category"];
+  $min_price = $_POST["min-price"];
+
+  $max_price = $_POST["max-price"];
+
+  // things which are required are here
+
+  if (strcasecmp($s_category, 'Any') == 0) {
+    $sql = "SELECT * FROM ad  where '$location' = ad_area AND '$type' = ad_type and '$category'=category 
+  and ad_price between '$min_price'and '$max_price'";
+    // $sql will have the data for the ad
+    // need to write a new query which will have only the link of the picture
+    // i need join two tables
+
+    $linkOFPicture = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
+  WHERE (ad.ad_area='$location'
+  AND ad.ad_type = '$type' and ad.category = '$category'
+  and ad.ad_price between '$min_price' and '$max_price');";
+  } else {
+
+    $sql = "SELECT * FROM ad where '$location' = ad_area AND '$type' = ad_type and '$category'=category 
+  and '$s_category' = sub_category and ad_price between '$min_price'and '$max_price'";
+
+    $linkOFPicture = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
+  WHERE (ad.ad_area='$location'
+  AND ad.ad_type = '$type' and ad.category = '$category' and '$s_category' = sub_category
+  and ad.ad_price between '$min_price' and '$max_price');";
+
+    //$pulisherContactInfo = "SELECT phone from user where '$sql['user_id']'=user_id;"
+
+  }
+
+  $res = $conn->query($sql);
+
+  $pic = $conn->query($linkOFPicture);
+
+
+
+?>
+
+
+    <!-- Result Section -->
+    <section id="result">
+      <div class="container-fluid">
+        
+        <!-- Row 1 of Result -->
+        <div class="row ms-5 me-5">
+          
+          <!-- there i need to add the loop -->
+          <?php
+          for($i=0;$i<$res->num_rows;$i++)
+          {
+            $row = $res->fetch_assoc();
+            $picture = $pic->fetch_assoc();
+
+            $imageaddress = $picture["link"];
+            $title = $row["ad_title"];
+            $price = $row["ad_price"];
+
+          ?>
+
+          <div class="col mb-3">
+            <div class="card" style="width: 18rem;">
+              <img style="height: 12rem;" src="<?php echo $imageaddress ?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title mt-0 mb-0"><?php echo $title ?></h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Price: </b><?php echo $price?></li>
+              </ul>
+              <div class="card-body pt-1 pb-1">
+                <a href="adin.php" class="btn btn-secondary card-link">see</a>
+                <a href="" class="btn btn-secondary cark-link">
+                  <img class="mb-1" src="star.ico">
+                </a>
+              </div>
             </div>
           </div>
+
+            <?php
+              }
+              ?>
         </div>
       </div>
-    </div>
 
-    <!-- Show More Button -->
-    <div class="d-flex justify-content-center mt-5 mb-5">
-     <button class="btn btn-md btn-secondary ms-auto me-auto">Show More</button>
-    </div>
-  </section>
-
+      <!-- Show More Button -->
+      <!-- <div class="d-flex justify-content-center mt-5 mb-5">
+      <button class="btn btn-md btn-secondary ms-auto me-auto">Show More</button>
+      </div> -->
+    </section>
+<?php
+}
+?>
   <footer>
   </footer>
 
