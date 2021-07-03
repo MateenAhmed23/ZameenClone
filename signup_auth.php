@@ -1,10 +1,9 @@
 <?php
-
+session_start();
     include "connection.php";
 
 
     // firstname=&lastname=&email=&username=&password=&re-password=
-
 
     $f_name = $_POST["firstname"];
     $l_name = $_POST["lastname"];
@@ -13,12 +12,18 @@
     $password = $_POST["password"];
     $re_password = $_POST["re-password"];
 
-    // Phone Number????
+    // Optional
 
-    // Cnic???
+    $cnic = NULL;
+    if (isset($_POST["cnic"])){
+        $cnic = $_POST["cnic"];
+    }
 
-
-    // Profile Pic????  (Optional)
+    $phone = NULL;
+    if (isset($_POST["phone"]))
+    {
+        $phone = $_POST["phone"];
+    }
 
 
     // Checking password
@@ -28,22 +33,20 @@
     }
 
 
-
-
-    echo "<p> $f_name $l_name" ;
-
-
-    
-
-
     // Writing Query to check if username already exists
     $sql = "INSERT INTO user (f_name ,l_name,username,password,email,phone, cnic)
-    VALUES ('$f_name', '$l_name', '$username', '$password', '$email', '03315471021', '3520030721157')";
+    VALUES ('$f_name', '$l_name', '$username', '$password', '$email', '$phone', '$cnic')";
 
 
     if ($conn->query($sql) === TRUE) {
-    echo "User Did sign up successfully";
+    echo "User account sign up successfully";
+    header("location: login.php");
     } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    header("location: signup.php?error= This account already exists!! log in to continue");
     }
+
+    $conn->close();
+
+        
+    exit();
 ?>

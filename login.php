@@ -18,19 +18,29 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand ps-5" href="index.php">Real Estate</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-3 pb-3">
+        <a class="navbar-brand ps-5" href="index.php"><h2><i>Real Estate</i></h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-items collapse navbar-collapse ms-5" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto pe-5">
+        <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
+        </ul>
+      </div>
     </nav>
+   
   </header>
   <main class="form-signin">
     <div class="m-5 p-5">
-      <form>
+      <form method = "POST" action = "loginCheck.php">
       
         <h1 class="h3 mb-3 fw-normal">Sign in</h1>
     
         <div class="form-floating mb-3">
-          <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email address</label>
+          <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username or email">
+          <label for="floatingInput">Email or Username</label>
+          
         </div>
   
         <div class="form-floating mb-3">
@@ -38,13 +48,19 @@
           <label for="floatingPassword">Password</label>
         </div>
     
-        <div class="checkbox mb-3">
+        <!-- <div class="checkbox mb-3">
           <label>
             <input type="checkbox" name="remember-me" value="remember-me"> Remember me
           </label>
-        </div>
+        </div> -->
   
         <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+        <?php
+          if(isset($_GET["error"]))
+          {
+            echo $_GET["error"];
+          }
+          ?>
         <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
         
       </form>

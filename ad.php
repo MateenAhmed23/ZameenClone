@@ -12,22 +12,32 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-
+  <style>
+    .navbar-items {
+  padding-right: 4rem;
+}
+  </style>
 </head>
 
 <body>
   <!-- <section id="header"> -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand ps-5" href="index.php">Real Estate</a>
-      <ul class="navbar-nav ms-auto pe-5">
-        <li class="navbar-item pe-2"><a class="nav-link" href="login.html">Login</a></li>
-        <li class="navbar-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand ps-5" href="index.php"><h2><i>Real Estate</i></h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-items collapse navbar-collapse ms-5" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto pe-5">
+          <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
+          <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-
+<!--<gm changes>-->
+<!--<hellllllo>-->
   <section id="advertisment">
     <div class="advertisment-result container  w-50 border pt-3 pb-3">
       <h1>Title Of Add</h1>
