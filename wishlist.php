@@ -1,3 +1,75 @@
+<?php
+session_start();
+include "connection.php";
+//Get userID from session
+$user_ID;
+if(isset($_SESSION["user_id"]))
+  $user_ID = (int)$_SESSION["user_id"]; 
+else{
+  echo 'user_id not set';
+  header("Location: login.php?msg=Please login to continue");
+}
+
+
+//Getting all the ad_ids which the user has starred;
+
+$sql = "SELECT `ad_id` FROM `starred_ad` WHERE `user_id` = '$user_ID'";
+
+
+$result = $conn->query($sql);
+
+
+//Saving number of ads user has starred
+$No_of_ads = $result->num_rows;
+
+
+$ad_id = array();
+
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    array_push($ad_id , $row["ad_id"]);
+  }
+}
+
+// All ads saved
+
+
+
+//Array of information
+
+
+$titles = array();
+$prices = array();
+
+
+// Get the ads info starred by the user
+
+
+foreach($ad_id as $ID){
+  $sql = "SELECT `ad_title`,`ad_price` FROM `ad` WHERE `ad_id` = '$ID'";
+
+
+  $result = $conn->query($sql);
+
+
+if ($result->num_rows == 1) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    array_push($titles , $row["ad_title"]);
+    array_push($prices , $row["ad_price"]);
+  }
+}
+}
+//Array made.
+
+$conn->close();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
