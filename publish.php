@@ -45,7 +45,7 @@ $sc_for_Farm = array('Any');
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-3 pb-3">
-      <a class="navbar-brand ps-5" href="loggedin.php"><h2><i>Real Estate</i></h2></a>
+      <a class="navbar-brand ps-5" href="index.php"><h2><i>Real Estate</i></h2></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

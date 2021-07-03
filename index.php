@@ -245,6 +245,7 @@ if(isset($_POST["findB"]))
             $title = $row["ad_title"];
             $price = $row["ad_price"];
             $AdId=$row["ad_id"];
+
           ?>
 
           <div class="col mb-3">
@@ -257,9 +258,35 @@ if(isset($_POST["findB"]))
                 <li class="list-group-item"><b>Price: </b><?php echo $price?></li>
               </ul>
               <div class="card-body pt-1 pb-1">
-                <a href="adin.php?varname=<?php echo $AdId ?>" class="btn btn-secondary card-link">see</a>
-                <a href="" class="btn btn-secondary cark-link">
-                  <img class="mb-1" src="star.ico">
+              <a href="adin.php?varname=<?php echo $AdId ?>" class="btn btn-secondary card-link">see</a>
+                <a href="buttonres.php" class="btn btn-secondary cark-link" >
+                  <form onsubmit="return acall(<?php echo $AdId ?>)">
+                  <input type="submit" value="Wishlist" />
+                  </form>
+                  <script>
+        function acall(first){
+          console.log(first);
+            var data = new FormData();
+
+            data.append("ad_ID", first);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("POST", "buttonres.php");
+
+            xhr.onload = function(){
+                if (this.response == "success")
+                {
+                  
+
+                }
+            };
+            xhr.send(data);
+            return false;
+        }
+
+
+    </script>
                 </a>
               </div>
             </div>
