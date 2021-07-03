@@ -162,6 +162,63 @@ $sc_for_Farm = array('Any');
         </form>
        
     </section>
+
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+
+  	$("#category").on("change",function(){
+
+  		var category = $("#category").val();
+      // Please change arrays if there are changes in sub categories.... THEY ARE NOT DYNAMMIC
+
+      let txt = "";
+      if (category === 'House')
+      {
+        var House = ['Any', 'Basement', 'Ground Floor', 'First Floor'];
+
+
+        for (let i = 0; i < House.length; ++i) {
+          txt += "<option value=" + House[i] + ">" + House[i] + "</option>";
+        }
+        
+      }
+
+      else if (category === 'Flat')
+      {
+
+        var Flat = ['Any', 'Pent House'];
+
+        for (let i = 0; i < Flat.length; ++i) {
+          txt += "<option value=" + Flat[i] + ">" + Flat[i] + "</option>";
+        }
+      }
+
+
+      else if (category === 'Commercial')
+      {
+        var Commercial = ['Office', 'Shop'];
+
+        for (let i = 0; i < Commercial.length; ++i) {
+          txt += "<option value=" + Commercial[i] + ">" + Commercial[i] + "</option>";
+        }
+      }
+
+      else{
+
+        var Farm = ['Any'];
+
+        for (let i = 0; i < Farm.length; ++i) {
+          txt += "<option value=" + Farm[i] + ">" + Farm[i] + "</option>";
+        }
+        
+      }
+
+
+      $('#s_category').html(txt);
+  	})
+  });
+</script>
 </body>
 
 </html>
