@@ -187,7 +187,6 @@ $conn->close();
             </div>
           <?php
           }
-
           ?>
 
         </div>
