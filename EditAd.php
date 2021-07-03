@@ -1,6 +1,7 @@
 <?php
 
-include "connection.php";
+include"connection.php";
+
 $ad_id;
 if (isset($_GET["varname"])) {
     $ad_id = (int)$_GET["varname"];
@@ -9,6 +10,7 @@ if (isset($_GET["varname"])) {
 $sql = "SELECT * from ad where '$ad_id'= ad_id";
 $Result = $conn->query($sql);
 $res = $Result->fetch_assoc();
+
 $title = $res['ad_title'];
 $area = $res['ad_area'];
 $price = $res['ad_price'];
@@ -108,22 +110,28 @@ $sc_for_Farm = array('Any');
             <!-- Title -->
             <div class="col-md-12">
                 <label class="form-label" for="title">Title of Ad</label>
+
                 <input class="form-control" type="text" name="title" id="title" value="<?php echo $title ?>" maxlength="50">
+
             </div>
 
             <!-- Description -->
             <div class="col-md-8">
+
                 <label class="form-label" for="desc" value="<?php echo $desc ?>">Description</label>
                 <textarea class="form-control" type="text" name="desc" id="desc" rows="8" maxlength="250"><?php echo $desc ?></textarea>
+
 
             </div>
 
             <!-- Price & Type -->
             <div class="col-md-4">
                 <label class="form-label" for="price">Price (Minimum: 1000)</label>
+
                 <input class="form-control" type="number" name="price" id="price" value="<?php echo $price ?>" min="1000">
+              
                 <label class="form-label mt-2" for="type">Type</label>
-                <select class="form-select" name="type" id="type">
+                <select class="form-select" name="type" id="type" >
                     <?php
                     foreach ($type as $value) {
                         echo "<option value='$value'>$value</option>";
@@ -136,13 +144,16 @@ $sc_for_Farm = array('Any');
             <!-- Location -->
             <div class="col-md-8">
                 <label class="form-label" for="location">Location</label>
+
                 <input class="form-control" type="text" name="location" value="<?php echo $area ?>" id="location" maxlength="50">
             </div>
 
             <!-- Cities -->
             <div class="col-md-4">
                 <label class="form-label" for="cities">Cities</label>
+
                 <select class="form-select" name="cities" id="cities" value="<?php echo $city ?>">
+
                     <?php
                     foreach ($cities as $value) {
                         echo "<option value='$value'>$value</option>";
@@ -155,6 +166,7 @@ $sc_for_Farm = array('Any');
             <!-- Category -->
             <div class="col-md-8">
                 <label class="form-label" for="category">Category</label>
+
                 <select class="form-select" name="category" id="category" value="<?php echo $cat ?>">
                     <?php
                     foreach ($category as $value) {
@@ -168,6 +180,7 @@ $sc_for_Farm = array('Any');
             <!-- Sub- Category -->
             <div class="col-md-4">
                 <label class="form-label" for="s_category">Sub-Category</label>
+
                 <select class="form-select" name="s_category" id="s_category" value="<?php echo $sub_cat ?>">
                     <?php
                     foreach ($sc_for_House as $value) {
