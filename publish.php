@@ -148,7 +148,9 @@ $sc_for_Farm = array('Any');
             <!-- File Upload -->
             <div class="input-group mb-3">
                 <!-- <label class="input-group-text" for="files"></label> -->
+
                 <input type="file" class="form-control" id="fileupload" name="files[]" accept=".jpg,.png,.jpeg" multiple>
+
             </div>
 
             <!-- File Upload Button -->

@@ -45,6 +45,12 @@
             $file_name = $_FILES["files"]["name"][$key];
             $file_tem_loc = $_FILES["files"]["tmp_name"][$key];
             $file_store = 'images/' . $file_name;
+print_r($file_name);
+echo "<br>";
+print_r($file_tem_loc);
+echo "<br>";
+print_r($file_store);
+echo "<br>";
 
             $ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
@@ -127,8 +133,8 @@
 
         $conn->close();
 
-        header("Location: index.php");
-        exit();
+       // header("Location: index.php");
+       // exit();
 
 
 
