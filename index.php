@@ -254,34 +254,33 @@ if(isset($_POST["findB"]))
               </ul>
               <div class="card-body pt-1 pb-1">
               <a href="adin.php?varname=<?php echo $AdId ?>" class="btn btn-secondary card-link">see</a>
-                <a href="buttonres.php" class="btn btn-secondary cark-link" >
-                  <form onsubmit="return acall(<?php echo $AdId ?>)">
-                  <input type="submit" value="Wishlist" />
-                  </form>
+                <!-- <a href="buttonres.php" class="btn btn-secondary cark-link" > -->
+                <a class="btn btn-secondary card-link" href="buttonres.php" onClick="return acall(<?php echo $AdId ?>)">Wish List
+                  <!-- <form onsubmit="return acall(<?php echo $AdId ?>)">
+                  <input type="submit" value="Wishlist" /> 
+                  </form> -->
                   <script>
-        function acall(first){
-          console.log(first);
-            var data = new FormData();
+                  function acall(first){
+                    console.log(first);
+                      var data = new FormData();
 
-            data.append("ad_ID", first);
+                      data.append("ad_ID", first);
 
-            var xhr = new XMLHttpRequest();
+                      var xhr = new XMLHttpRequest();
 
-            xhr.open("POST", "buttonres.php");
+                      xhr.open("POST", "buttonres.php");
 
-            xhr.onload = function(){
-                if (this.response == "success")
-                {
-                  
+                      xhr.onload = function(){
+                          if (this.response == "success")
+                          {
+                            
 
-                }
-            };
-            xhr.send(data);
-            return false;
-        }
-
-
-    </script>
+                          }
+                      };
+                      xhr.send(data);
+                      return false;
+                      }
+                  </script>
                 </a>
               </div>
             </div>
