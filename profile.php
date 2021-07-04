@@ -82,13 +82,7 @@ for ($i=0;$i<$No_of_ads;$i++)
   else
     echo "query not successful";
 }
-
-
-
-
 $conn->close();
-
-
 ?>
 <html lang="en">
 
