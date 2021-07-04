@@ -114,13 +114,19 @@ $Adid = (int)$_GET['varname'];
   echo"Query error";
   $sql="SELECT ad_picture.link from ad_picture  inner join ad on ad_picture.ad_id = ad.ad_id and ad_picture.ad_id='$Adid'";
   $result = $conn->query($sql);
-  $picturelink="";
+  $picturelink=array();
+  $count=0;
   if($conn->query($sql)==TRUE)
   {
     while($row = $result->fetch_assoc()) {
-      $picturelink=$row["link"];
+      array_push($picturelink,$row["link"]);
     } 
   }
+  //$animals = array(“Bear”, “Leopard”, “Tiger”);
+
+  $noOfPicture = count($picturelink);
+
+  //print_r($noOfPicture);
   $conn->close();
 ?>
 
@@ -138,15 +144,25 @@ $Adid = (int)$_GET['varname'];
 
 
             <!-- loop here for diplaying image -->
+         
             <div class="carousel-item active">
-              <img src="<?php echo $picturelink ?>" class="d-block w-100" alt="...">
+              <img src="<?php echo $picturelink[0] ?>" class="d-block w-100" alt="...">
             </div>
+          
+            <?php
+            for($i=1;$i<$noOfPicture;$i++)
+            {
+              ?>
+              
             <div class="carousel-item">
-              <img src="images/house2.jpg" class="d-block w-100" alt="...">
+              <img src="<?php echo $picturelink[$i]?>" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item">
+            <?php
+            }
+            ?>
+            <!-- <div class="carousel-item">
               <img src="images/house3.jpg" class="d-block w-100" alt="...">
-            </div>
+            </div> -->
             <!-- loop ends here -->
 
           </div>
