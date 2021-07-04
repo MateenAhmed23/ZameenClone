@@ -144,7 +144,7 @@ $Adid = (int)$_GET['varname'];
             <div class="carousel-item">
               <img src="images/house2.jpg" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item"> 
               <img src="images/house3.jpg" class="d-block w-100" alt="...">
             </div>
             <!-- loop ends here -->
@@ -167,7 +167,7 @@ $Adid = (int)$_GET['varname'];
       <div class="row  ms-auto me-auto">
         <div class="col-lg-8 border ">
         <?php
-        echo"<h4>"."$description"."</h4>";
+        echo"<p>"."$description"."</p>";
         ?>
           <!-- <h2>Description</h2> -->
           <p>
