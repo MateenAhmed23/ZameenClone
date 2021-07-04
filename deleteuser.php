@@ -4,7 +4,7 @@ $user;
 if(isset($_GET["del"]))
 {
     $user=(int)$_GET["del"];
-    echo $user;
+    // echo $user;
 }
 else
     echo"not received";
@@ -35,6 +35,13 @@ if($Result->num_rows > 0)
     else
         echo "User not deleted successfully";
 
+}
+else if($Result->num_rows == 0){
+     $sql = "DELETE from user where '$user' =user_id";
+    if($conn->query($sql)==TRUE)
+        echo "User deleted successfully";
+    else
+        echo "User not deleted successfully";
 }
 else
 {
