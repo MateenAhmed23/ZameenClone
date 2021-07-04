@@ -199,6 +199,7 @@
             }
         };
         xhr.send(data);
+        location.reload();
         return false;
         }
 </script>
