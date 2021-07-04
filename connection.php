@@ -4,6 +4,7 @@
     
     
 $servername = "localhost";
+
 $username = "root";
 $password = "root";
 $db_name = "zameendb";

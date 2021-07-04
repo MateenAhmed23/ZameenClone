@@ -61,7 +61,7 @@ $sc_for_Farm = array('Any');
         }
     </style>
 
-    <script src="jquery/publish.js"></script>
+    <!-- <script src="jquery/publish.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -69,7 +69,7 @@ $sc_for_Farm = array('Any');
             $("#lname").val("Bean");
             $("#title").val("Boss");
         });
-    </script>
+    </script> -->
 
     <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 </head>
@@ -106,12 +106,12 @@ $sc_for_Farm = array('Any');
 
     <section id="PublishAd">
         <h1>Edit Ad</h1>
-        <form class="row g-3" action="EditAd.php" method="POST" enctype="multipart/form-data">
+        <form class="row g-3" action="editadsub.php?ad_id=<?php echo $ad_id;  ?>" method="POST" enctype="multipart/form-data">
             <!-- Title -->
             <div class="col-md-12">
                 <label class="form-label" for="title">Title of Ad</label>
 
-                <input class="form-control" type="text" name="title" id="title" value="<?php echo $title ?>" maxlength="50">
+                <input class="form-control" type="text" name="title" id="title" value="<?php echo $title ?>" maxlength="50" required>
 
             </div>
 
@@ -119,7 +119,7 @@ $sc_for_Farm = array('Any');
             <div class="col-md-8">
 
                 <label class="form-label" for="desc" value="<?php echo $desc ?>">Description</label>
-                <textarea class="form-control" type="text" name="desc" id="desc" rows="8" maxlength="250"><?php echo $desc ?></textarea>
+                <textarea class="form-control" type="text" name="desc" id="desc" rows="8" maxlength="250" required><?php echo $desc ?></textarea>
 
 
             </div>
@@ -128,7 +128,7 @@ $sc_for_Farm = array('Any');
             <div class="col-md-4">
                 <label class="form-label" for="price">Price (Minimum: 1000)</label>
 
-                <input class="form-control" type="number" name="price" id="price" value="<?php echo $price ?>" min="1000">
+                <input class="form-control" type="number" name="price" id="price" value="<?php echo $price ?>" min="1000" required>
               
                 <label class="form-label mt-2" for="type">Type</label>
                 <select class="form-select" name="type" id="type" >
@@ -145,7 +145,7 @@ $sc_for_Farm = array('Any');
             <div class="col-md-8">
                 <label class="form-label" for="location">Location</label>
 
-                <input class="form-control" type="text" name="location" value="<?php echo $area ?>" id="location" maxlength="50">
+                <input class="form-control" type="text" name="location" value="<?php echo $area ?>" id="location" maxlength="50" required>
             </div>
 
             <!-- Cities -->
@@ -181,7 +181,7 @@ $sc_for_Farm = array('Any');
             <div class="col-md-4">
                 <label class="form-label" for="s_category">Sub-Category</label>
 
-                <select class="form-select" name="s_category" id="s_category" value="<?php echo $sub_cat ?>">
+                <select class="form-select" name="s_category" id="s_category" value="<?php echo $sub_cat ?>"> 
                     <?php
                     foreach ($sc_for_House as $value) {
                         echo "<option value='$value'>$value</option>";
@@ -191,11 +191,11 @@ $sc_for_Farm = array('Any');
             </div>
 
 
-            <!-- File Upload -->
+            <!-- File Upload
             <div class="input-group mb-3">
-                <!-- <label class="input-group-text" for="files"></label> -->
+                 <label class="input-group-text" for="files"></label>
                 <input type="file" class="form-control" id="fileupload" name="files[]" accept=".jpg,.png,.jpeg" multiple>
-            </div>
+            </div> -->
 
             <!-- File Upload Button -->
             <div class="col-md-8">
