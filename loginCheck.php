@@ -40,7 +40,6 @@ else
   $conn->close();
   header("Location: login.php?error= Invalid Username or password or if your don't have an account please sign up!");
   exit();
-
 }
 
 

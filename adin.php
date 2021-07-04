@@ -1,20 +1,12 @@
 
-            <?php
-            session_start();
-            include "connection.php";
-
-
-            
-            $Adid = (int)$_GET['varname'];
-            //echo $Adid;
-
+<?php
+session_start();
+include "connection.php";
+$Adid = (int)$_GET['varname'];
+//echo $Adid;
 //  var_dump($mAdID);
 //var_dump($id);
-
-
-
-
-            ?>
+?>
 
 
 <!DOCTYPE html>
@@ -48,7 +40,32 @@
       </button>
       <div class="profile-dropdown collapse navbar-collapse ms-5" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto pe-5">
+        <?php
+          if(isset($_SESSION["user_id"]))
+          {
+          ?>
           <li class="navbar-item"><a class="nav-link" href="publish.php">Publish Ad</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profile
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
+                  <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
+                  <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
+                  <li><a class="dropdown-item" href="Signout.php">Sign Out</a></li>
+                  <?php
+          }
+          else
+          {
+            ?>
+            <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
+            <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
+            <?php
+
+          }
+          ?>
+          <!-- <li class="navbar-item"><a class="nav-link" href="publish.php">Publish Ad</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Profile
@@ -59,58 +76,52 @@
               <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
               <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
             </ul>
-          </li>
-
-          
-          <!-- <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
-          <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li> -->
+            </li> -->
         </ul>
       </div>
       
     </nav>
   </header>
 <?php
-$userid=$_SESSION["user_id"];
-$sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
- inner join user on ad.user_id=user.user_id and ad.ad_id='$Adid'";
-$res=$conn->query($sql);
-$Title="";
-$description="";
-$category="";
-$type="";
-$phone="";
-$price="";
-$email="";
-if($conn->query($sql)==TRUE)
-{
-  while($row = $res->fetch_assoc()) {
-    $Title=$row["ad_title"];
-    //echo "$Title";
-    $description=$row["ad_desc"];
-    $category=$row["category"];
-    $type=$row["ad_type"];
-    $phone=$row["phone"];
-    $email=$row["email"];
-    $price=$row["ad_price"];
+  ///If loggedin .....
+  // do this...
+  // $userid=$_SESSION["user_id"];
+  $sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
+  inner join user on ad.user_id=user.user_id and ad.ad_id='$Adid'";
+  $res=$conn->query($sql);
+  $Title="";
+  $description="";
+  $category="";
+  $type="";
+  $phone="";
+  $price="";
+  $email="";
+  if($conn->query($sql)==TRUE)
+  {
+    while($row = $res->fetch_assoc()) {
+      $Title=$row["ad_title"];
+      //echo "$Title";
+      $description=$row["ad_desc"];
+      $category=$row["category"];
+      $type=$row["ad_type"];
+      $phone=$row["phone"];
+      $email=$row["email"];
+      $price=$row["ad_price"];
+    }
+  // echo "ad belong to: "."$email";
   }
- // echo "ad belong to: "."$email";
-}
-else
-echo"Query error";
-
-
-$sql="SELECT ad_picture.link from ad_picture  inner join ad on ad_picture.ad_id = ad.ad_id and ad_picture.ad_id='$Adid'";
-$result = $conn->query($sql);
-$picturelink="";
-if($conn->query($sql)==TRUE)
-{
-  while($row = $result->fetch_assoc()) {
-    $picturelink=$row["link"];
+  else
+  echo"Query error";
+  $sql="SELECT ad_picture.link from ad_picture  inner join ad on ad_picture.ad_id = ad.ad_id and ad_picture.ad_id='$Adid'";
+  $result = $conn->query($sql);
+  $picturelink="";
+  if($conn->query($sql)==TRUE)
+  {
+    while($row = $result->fetch_assoc()) {
+      $picturelink=$row["link"];
+    } 
   }
- 
-}
-$conn->close();
-
+  $conn->close();
 ?>
 
   <section id="advertisment">
@@ -141,7 +152,7 @@ $conn->close();
           </div>
           
           <!-- Button functionality disabled atm -->
-
+          <!-- Previous and Next Buttons -->
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -185,7 +196,7 @@ $conn->close();
             <?php
             echo"<h6>Price: $"."$price"."</h6>"."</li>";
             ?>
-            <a href="mailto:<?php echo $email ?>"   class="list-group-item btn btn-dark" >Message</a></li>
+            <a href="mailto:<?php echo $email ?>"   class="list-group-item btn btn-dark" >Mail</a></li>
           </ul>
         </div>
       </div>

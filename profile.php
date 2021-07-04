@@ -82,13 +82,7 @@ for ($i=0;$i<$No_of_ads;$i++)
   else
     echo "query not successful";
 }
-
-
-
-
 $conn->close();
-
-
 ?>
 <html lang="en">
 
@@ -199,14 +193,14 @@ $conn->close();
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item"><b>Price: </b><?php echo $prices[$i];  ?></li>
                 </ul>
-                <div class="row card-body">
-                  <a href="adin.php?varname= <?php echo $ad_id[$i];  ?>" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">See</a>
-                  <!-- <a href="" class="btn btn-secondary cark-link"> -->
-                    <!-- <img class="mb-1" src="star.ico"> -->
+                <div class=" card-body">
+                  <a href="adin.php?varname= <?php echo $ad_id[$i];  ?>" class="ms-auto me-auto btn btn-dark me-auto card-link">See</a>
                   </a>
-                  <a href="deletead.php?varname= <?php echo $ad_id[$i];  ?>" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Delete</a>
+                  <a href="EditAd.php?varname= <?php echo $ad_id[$i];  ?>" class="ms-auto me-auto btn btn-dark me-auto card-link">Edit Ad</a>
+                  <a href="deletead.php?varname= <?php echo $ad_id[$i];  ?>" class="ms-auto me-auto btn btn-dark me-auto card-link">Delete</a>
                 </div>
                 <a href="EditAd.php?varname=<?php echo $ad_id[$i];  ?>" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit Ad</a>
+
               </div>
             </div>
           <?php
