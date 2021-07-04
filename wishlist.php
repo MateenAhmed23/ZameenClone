@@ -162,7 +162,7 @@
               </ul>
               <div class="card-body pt-1 pb-1">
                 <a href="adin.php?varname=<?php echo $ad_id[$i]  ?>" class="ms-auto me-auto btn btn-secondary me-auto card-link">See</a>
-                <a class="btn btn-secondary card-link" onClick="return acall(<?php echo $ad_id[$i]; ?>)">Wish List
+                <a class="btn btn-secondary card-link" onClick="return acall(<?php echo $ad_id[$i]; ?>)">Remove
                   <!-- <img class="pb-1" src="star-red.ico"> -->
                 </a>
 
