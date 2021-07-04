@@ -148,42 +148,39 @@
       <div class="row ms-auto me-auto">
 
 
-      <?php
-      for ($i = 0; $i < $No_of_ads; $i++) {
+        <?php
+        for ($i = 0; $i < $No_of_ads; $i++) {
         ?>
-        <div class="col-lg-4 col-md-6 mb-3">
-          <div class="card" style="width: 18rem;">
-            <img style="height: 12rem;" src="<?php echo $PictureLink[$i] ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $titles[$i]  ?></h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Price: </b><?php echo $prices[$i]  ?></li>
-            </ul>
-            <div class="card-body pt-1 pb-1">
-              <a href="adin.php?varname=<?php  echo $ad_id[$i]  ?>" class="ms-auto me-auto btn btn-secondary me-auto card-link">See</a>
-              <a class="btn btn-secondary card-link" href="buttonres.php" onClick="return acall(<?php echo $AdId ?>)">Wish List
-              <!-- <img class="pb-1" src="star-red.ico"> -->
-              </a>
+          <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card" style="width: 18rem;">
+              <img style="height: 12rem;" src="<?php echo $PictureLink[$i] ?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $titles[$i]  ?></h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Price: </b><?php echo $prices[$i]  ?></li>
+              </ul>
+              <div class="card-body pt-1 pb-1">
+                <a href="adin.php?varname=<?php echo $ad_id[$i]  ?>" class="ms-auto me-auto btn btn-secondary me-auto card-link">See</a>
+                <a class="btn btn-secondary card-link" onClick="return acall(<?php echo $ad_id[$i]; ?>)">Wish List
+                  <!-- <img class="pb-1" src="star-red.ico"> -->
+                </a>
 
-              <!-- <a href="" class="btn btn-secondary cark-link"> -->
-              <!-- <img class="mb-1" src="star.ico"> -->
-              <!-- </a> -->
+                <!-- <a href="" class="btn btn-secondary cark-link"> -->
+                <!-- <img class="mb-1" src="star.ico"> -->
+                <!-- </a> -->
+              </div>
             </div>
           </div>
-        </div>
-      <?php
-      }
+        <?php
+        }
 
-      ?>
-
-
-        
-
+        ?>
 
       </div>
     </div>
   </section>
+ 
   <script>
     function acall(first) {
       console.log(first);
@@ -199,7 +196,6 @@
             if (this.response == "success")
             {
               
-
             }
         };
         xhr.send(data);
