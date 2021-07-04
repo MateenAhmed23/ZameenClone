@@ -188,17 +188,17 @@ if(isset($_POST["findB"]))
 
   // things which are required are here
 
-  if (strcasecmp($s_category, 'Any') == 0) {
-    $sql = "SELECT * FROM ad  where '$location' = ad_area AND '$type' = ad_type and '$category'=category 
-  and ad_price between '$min_price'and '$max_price'";
-    // $sql will have the data for the ad
-    // need to write a new query which will have only the link of the picture
-    // i need join two tables
+  if (strcasecmp($s_category, 'Any') == 0) 
+  {
+              $sql = "SELECT * FROM ad  where '$location' = ad_area 
+                      AND '$type' = ad_type and '$category'=category 
+                      and ad_price between '$min_price'and '$max_price'";
 
     $linkOFPicture = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
-  WHERE (ad.ad_area='$location'
-  AND ad.ad_type = '$type' and ad.category = '$category'
-  and ad.ad_price between '$min_price' and '$max_price');";
+                      WHERE (ad.ad_area='$location'
+                      AND ad.ad_type = '$type' 
+                      and ad.category = '$category'
+                      and ad.ad_price between '$min_price' and '$max_price');";
   } else {
 
     $sql = "SELECT * FROM ad where '$location' = ad_area AND '$type' = ad_type and '$category'=category 
