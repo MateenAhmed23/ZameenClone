@@ -39,9 +39,9 @@ if ($result->num_rows > 0) {
 
 $sql = "SELECT `ad_id`,`ad_title`,`ad_price` FROM `ad` WHERE `user_id` = '$user_ID'";
 
-//$linkofPictures = "SELECT link from ad left join ad "
-$LINK_Picture   = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
-WHERE ('$user_ID'= ad.user_id)";
+// //$linkofPictures = "SELECT link from ad left join ad "
+// $LINK_Picture   = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
+// WHERE ('$user_ID'= ad.user_id)";
 
 $result = $conn->query($sql);
 
@@ -66,21 +66,19 @@ if ($result->num_rows > 0) {
 }
 
 //Array made.
-$PictureLink="SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
-WHERE ('$user_ID'= ad.user_id)";
+
+
+$Pictures = array();
+for ($i = 0; $i < $No_of_ads; $i++) {
+
+  $PictureLink = "SELECT link FROM `ad_picture`
+WHERE `ad_id` = '$ad_id[$i]' limit 1;";
   $res = $conn->query($PictureLink);
-
-$PictureLink = array();
-for ($i=0;$i<$No_of_ads;$i++)
-{
-
-  if($res->num_rows>0)
-  {
-    while ($row=$res->fetch_assoc())
-      array_push($PictureLink,$row["link"]);
-  }
-  else
-    echo "query not successful";
+  if ($res->num_rows > 0) {
+    while ($row = $res->fetch_assoc())
+      array_push($Pictures, $row["link"]);
+  } else
+    array_push($Pictures, "");
 }
 $conn->close();
 ?>
@@ -186,7 +184,7 @@ $conn->close();
           ?>
             <div class="col-lg-4 col-md-6 mb-3">
               <div class="card" style="width: 18rem;">
-                <img style="height: 12rem;" src="<?php echo $PictureLink[$i] ?>" class="card-img-top" alt="...">
+                <img style="height: 12rem;" src="<?php echo $Pictures[$i] ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $titles[$i];  ?></h5>
                 </div>
@@ -210,7 +208,7 @@ $conn->close();
         </div>
       </div>
     </div>
-    
+
   </section>
 </body>
 

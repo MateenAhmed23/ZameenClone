@@ -12,6 +12,10 @@ else {
 
 //Getting all the ad_ids which the user has starred;
 //$ads=(int)$_GET["ad_id"];
+
+
+
+// Getting all ads of user
 $sql = "SELECT `ad_id` FROM `starred_ad` WHERE `user_id` = '$user_ID'";
 
 
@@ -25,6 +29,7 @@ $No_of_ads = $result->num_rows;
 $ad_id = array();
 
 
+// Filling the array with ad ids
 if ($result->num_rows > 0) {
   // output data of each row
   while ($row = $result->fetch_assoc()) {
@@ -33,6 +38,7 @@ if ($result->num_rows > 0) {
 }
 
 
+// Getting 1 picture of each ad
 $Pictures = array();
 for ($i = 0; $i < $No_of_ads; $i++) {
   $PictureLink = "SELECT link FROM `ad_picture`
