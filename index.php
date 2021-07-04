@@ -106,7 +106,7 @@ session_start();
 
       <!-- Cities -->
       <div class="col-md-4">
-        <label class="form-label" for="cities">Cities</label>
+        <label class="form-label" for="cities">City</label>
         <select class="form-select" name="cities" id="cities">
         <?php
           foreach ($cities as $value) {
@@ -118,7 +118,7 @@ session_start();
 
       <!-- Location -->
       <div class="col-md-4">
-        <label class="form-label" for="location">Location</label>
+        <label class="form-label" for="location">Area</label>
         <input class="form-control" type="text" name="location" id="location" maxlength="50">
       </div>
 
@@ -245,7 +245,7 @@ if(isset($_POST["findB"]))
 
           <div class="col mb-3">
             <div class="card" style="width: 18rem;">
-              <img style="height: 12rem;" src="<?php echo $imageaddress ?>" class="card-img-top" alt="...">
+              <img style="height: 12rem;" src="<?php echo $imageaddress ?>" class="card-img-top" alt="Ad Image">
               <div class="card-body">
                 <h5 class="card-title mt-0 mb-0"><?php echo $title ?></h5>
               </div>
@@ -259,28 +259,7 @@ if(isset($_POST["findB"]))
                   <!-- <form onsubmit="return acall(<?php echo $AdId ?>)">
                   <input type="submit" value="Wishlist" /> 
                   </form> -->
-                  <script>
-                  function acall(first){
-                    console.log(first);
-                      var data = new FormData();
-
-                      data.append("ad_ID", first);
-
-                      var xhr = new XMLHttpRequest();
-
-                      xhr.open("POST", "buttonres.php");
-
-                      xhr.onload = function(){
-                          if (this.response == "success")
-                          {
-                            
-
-                          }
-                      };
-                      xhr.send(data);
-                      return false;
-                      }
-                  </script>
+                 
                 </a>
               </div>
             </div>
@@ -359,7 +338,27 @@ if(isset($_POST["findB"]))
   	})
   });
 </script>
+<script>
+    function acall(first) {
+      console.log(first);
+        var data = new FormData();
 
+        data.append("ad_ID", first);
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("POST", "buttonres.php");
+
+        xhr.onload = function(){
+            if (this.response == "success")
+            {
+              
+
+            }
+        };
+        xhr.send(data);
+        return false;
+        }
+</script>
 </body>
-
 </html>
