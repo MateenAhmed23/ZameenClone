@@ -327,7 +327,7 @@ $find = 0;
                   <h5 class="card-title mt-0 mb-0"><?php echo $title ?></h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><b>Price: </b><?php echo $price ?></li>
+                  <li class="list-group-item"><b>Price: $</b><?php echo $price ?></li>
                 </ul>
                 <div class="card-body pt-1 pb-1">
                   <a href="adin.php?varname=<?php echo $AdId ?>" class="btn btn-secondary card-link">see</a>
