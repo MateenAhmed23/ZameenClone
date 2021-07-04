@@ -20,6 +20,7 @@ $sc_for_Commercial = array('Office', 'Shop');
 
 $sc_for_Farm = array('Any');
 
+
 $find = 0;
 
 ?>
@@ -87,7 +88,9 @@ $find = 0;
                 <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
               <?php
 
+
             } ?>
+
 
               </ul>
       </div>
@@ -175,55 +178,125 @@ $find = 0;
 
 
   <?php
+
+
   if (isset($_POST["findB"])) {
-
-
     include "connection.php";
-
+    // taking data after Find Button pressed
 
     $type = $_POST["type"];
-
     $city = $_POST["cities"];
     $location = $_POST["location"];
     $category = $_POST["category"];
     $s_category = $_POST["s_category"];
     $min_price = $_POST["min-price"];
-
     $max_price = $_POST["max-price"];
 
-    // things which are required are here
+    // all the data is now available.
 
-    if (strcasecmp($s_category, 'Any') == 0) {
-      $sql = "SELECT * FROM ad  where '$location' = ad_area 
-                      AND '$type' = ad_type and '$category'=category 
-                      and ad_price between '$min_price'and '$max_price'";
 
-      $linkOFPicture = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
-                      WHERE (ad.ad_area='$location'
-                      AND ad.ad_type = '$type' 
-                      and ad.category = '$category'
-                      and ad.ad_price between '$min_price' and '$max_price');";
-    } else {
 
-      $sql = "SELECT * FROM ad where '$location' = ad_area AND '$type' = ad_type and '$category'=category 
-  and '$s_category' = sub_category and ad_price between '$min_price'and '$max_price'";
-
-      $linkOFPicture = "SELECT ad_picture.link FROM `ad_picture` left join  `ad` on  ad.ad_id = ad_picture.ad_id
-  WHERE (ad.ad_area='$location'
-  AND ad.ad_type = '$type' and ad.category = '$category' and '$s_category' = sub_category
-  and ad.ad_price between '$min_price' and '$max_price');";
-
-      //$pulisherContactInfo = "SELECT phone from user where '$sql['user_id']'=user_id;"
-
+    if (
+      $type != "" && $city != "" && $category != ""
+      && $s_category != "" && $location == "" && $max_price == "" && $min_price == ""
+    ) {
+      if ($s_category == "Any") {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city 
+        AND '$type' = ad_type and '$category'=category ";
+      
+      } else {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city 
+        AND '$type' = ad_type and '$category'=category  and '$s_category'=sub_category ";
+      }
     }
 
+    // i'm case 2 
+    // above 4 + area is also present
+
+    if (
+      $type != "" && $city != "" && $category != ""
+      && $s_category != "" && $location != "" && $max_price == "" && $min_price == ""
+    ) {
+      if ($s_category == "Any") {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city and '$location' = ad_area 
+        AND '$type' = ad_type and '$category'=category ";
+
+
+        // sub_cat -> any
+      } else {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city 
+        AND '$type' = ad_type and '$location' = ad_area and '$category'=category  and '$s_category'=sub_category ";
+
+      }
+    }
+
+    // i'm case 3
+    // above 5 and min also present 
+
+    if (
+      $type != "" && $city != "" && $category != ""
+      && $s_category != "" && $location != "" && $min_price != "" && $max_price == ""
+    ) {
+      if ($s_category == "Any") {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city and '$location' = ad_area 
+        AND '$type' = ad_type and '$category'=category and '$min_price'<=ad_price";
+
+  
+
+        // sub_cat -> any
+      } else {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city 
+        AND '$type' = ad_type and '$location' = ad_area and '$category'=category  
+        and '$s_category'=sub_category and '$min_price'<=ad_price";
+
+      }
+    }
+    // i'm case 4
+    // above 5 and max price also given
+
+
+
+    if ($type != "" && $city != "" && $category != "" && $s_category != "" && $location != "" && $max_price != "" && $min_price == "") {
+      if ($s_category == "Any") {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city and '$location' = ad_area 
+        AND '$type' = ad_type and '$category'=category and '$max_price'>=ad_price";
+
+      } else {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city 
+        AND '$type' = ad_type and '$location' = ad_area and '$category'=category  
+        and '$s_category'=sub_category and '$max_price'>=ad_price";
+
+      }
+    }
+
+    // i'm case 5
+    // all are given
+    if ($type != "" && $city != "" && $category != ""
+      && $s_category != "" && $location != "" && $max_price != "" && $min_price != ""
+    ) {
+      if ($s_category == "Any") {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city and '$location' = ad_area 
+        AND '$type' = ad_type and '$category'=category and ad_price between '$min_price' and '$max_price'";
+
+        // sub_cat -> any
+      } else {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city 
+        AND '$type' = ad_type and '$location' = ad_area and '$category'=category  
+        and '$s_category'=sub_category and ad_price between '$min_price' and '$max_price'";
+      }
+    }
     $res = $conn->query($sql);
+    $links = array();
+    //print_r($res->num_rows);
+    while ($row = $res->fetch_assoc()) {
+      $id = $row['ad_id'];
 
-    $pic = $conn->query($linkOFPicture);
-
-
-
-
+      $linkOFPicture = "SELECT `link` from `ad_picture` where `ad_id`='$id' limit 1;";
+      $resP = $conn->query($linkOFPicture);
+      $rowP = $resP->fetch_assoc();
+      array_push($links, $rowP['link']);
+    }
+    $res = $conn->query($sql);
 
   ?>
 
@@ -239,9 +312,8 @@ $find = 0;
           <?php
           for ($i = 0; $i < $res->num_rows; $i++) {
             $row = $res->fetch_assoc();
-            $picture = $pic->fetch_assoc();
 
-            $imageaddress = $picture["link"];
+            $imageaddress = $links[$i];
             $title = $row["ad_title"];
             $price = $row["ad_price"];
             $AdId = $row["ad_id"];
@@ -260,6 +332,7 @@ $find = 0;
                 <div class="card-body pt-1 pb-1">
                   <a href="adin.php?varname=<?php echo $AdId ?>" class="btn btn-secondary card-link">see</a>
                   <!-- <a href="buttonres.php" class="btn btn-secondary cark-link" > -->
+
                   <?php
                   if (isset($_SESSION["user_id"])) {
 
@@ -279,6 +352,7 @@ $find = 0;
                   <?php
                   }
                   ?>
+
                 </div>
               </div>
             </div>
@@ -318,6 +392,7 @@ $find = 0;
             txt += "<option value=" + House[i] + ">" + House[i] + "</option>";
           }
 
+
         } else if (category === 'Flat') {
 
           var Flat = ['Any', 'Pent House'];
@@ -327,6 +402,7 @@ $find = 0;
           }
         } else if (category === 'Commercial') {
           var Commercial = ['Office', 'Shop'];
+
 
           for (let i = 0; i < Commercial.length; ++i) {
             txt += "<option value=" + Commercial[i] + ">" + Commercial[i] + "</option>";
@@ -351,6 +427,7 @@ $find = 0;
       console.log(first);
       var data = new FormData();
 
+
       data.append("ad_ID", first);
 
       var xhr = new XMLHttpRequest();
@@ -368,6 +445,7 @@ $find = 0;
         else{
           document.getElementById(first).textContent = "Remove";
         }
+
       };
       xhr.send(data);
       return false;
