@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+
+$user_ID;
+if (isset($_SESSION["user_id"])) {
+  $user_ID = (int)$_SESSION["user_id"];
+}
 $type = array('Buy', 'Rent');
 
 $cities = array('Lahore', 'Karachi', 'Islamabad', 'Peshawar', 'Quetta', 'Muzaffarabad');
@@ -13,6 +19,7 @@ $sc_for_Flat = array('Any', 'Pent House');
 $sc_for_Commercial = array('Office', 'Shop');
 
 $sc_for_Farm = array('Any');
+
 
 $find = 0;
 
@@ -81,7 +88,9 @@ $find = 0;
                 <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
               <?php
 
+
             } ?>
+
 
               </ul>
       </div>
@@ -170,6 +179,7 @@ $find = 0;
 
   <?php
 
+
   if (isset($_POST["findB"])) {
     include "connection.php";
     // taking data after Find Button pressed
@@ -231,6 +241,7 @@ $find = 0;
         $sql = "SELECT * FROM ad  where '$city' = ad_city and '$location' = ad_area 
         AND '$type' = ad_type and '$category'=category and '$min_price'<=ad_price";
 
+  
 
         // sub_cat -> any
       } else {
@@ -242,6 +253,7 @@ $find = 0;
     }
     // i'm case 4
     // above 5 and max price also given
+
 
 
     if ($type != "" && $city != "" && $category != "" && $s_category != "" && $location != "" && $max_price != "" && $min_price == "") {
@@ -285,6 +297,7 @@ $find = 0;
       array_push($links, $rowP['link']);
     }
     $res = $conn->query($sql);
+
   ?>
 
 
@@ -319,12 +332,27 @@ $find = 0;
                 <div class="card-body pt-1 pb-1">
                   <a href="adin.php?varname=<?php echo $AdId ?>" class="btn btn-secondary card-link">see</a>
                   <!-- <a href="buttonres.php" class="btn btn-secondary cark-link" > -->
-                  <a class="btn btn-secondary card-link" href="buttonres.php" onClick="return acall(<?php echo $AdId ?>)">Wish List
-                    <!-- <form onsubmit="return acall(<?php echo $AdId ?>)">
-                  <input type="submit" value="Wishlist" /> 
-                  </form> -->
 
-                  </a>
+                  <?php
+                  if (isset($_SESSION["user_id"])) {
+
+
+                  ?>
+                    <a class="btn btn-secondary card-link" href="buttonres.php" onClick="return acall(<?php echo $AdId ?>)" id= "<?php echo $AdId ?>"><?php
+                      $sql = "SELECT * FROM `starred_ad` WHERE `user_id` = '$user_ID' and `ad_id` = '$AdId';";
+                      $result = $conn->query($sql);
+
+                      if ($result->num_rows == 1) {
+                        echo "Remove";
+                      } else {
+                        echo "Wishlist";
+                      }
+                      ?></a>
+
+                  <?php
+                  }
+                  ?>
+
                 </div>
               </div>
             </div>
@@ -364,6 +392,7 @@ $find = 0;
             txt += "<option value=" + House[i] + ">" + House[i] + "</option>";
           }
 
+
         } else if (category === 'Flat') {
 
           var Flat = ['Any', 'Pent House'];
@@ -373,6 +402,7 @@ $find = 0;
           }
         } else if (category === 'Commercial') {
           var Commercial = ['Office', 'Shop'];
+
 
           for (let i = 0; i < Commercial.length; ++i) {
             txt += "<option value=" + Commercial[i] + ">" + Commercial[i] + "</option>";
@@ -397,6 +427,7 @@ $find = 0;
       console.log(first);
       var data = new FormData();
 
+
       data.append("ad_ID", first);
 
       var xhr = new XMLHttpRequest();
@@ -404,10 +435,17 @@ $find = 0;
       xhr.open("POST", "buttonres.php");
 
       xhr.onload = function() {
-        if (this.response == "success") {
-
-
+        var text = document.getElementById(first).textContent;
+        console.log(text);
+        if (text == "Remove")
+        {
+          console.log("I am inside");
+          document.getElementById(first).textContent = "Wishlist";
         }
+        else{
+          document.getElementById(first).textContent = "Remove";
+        }
+
       };
       xhr.send(data);
       return false;

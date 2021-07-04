@@ -110,7 +110,7 @@ $conn->close();
               <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
               <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
               <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
-              <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
+              <li><a class="dropdown-item" href="Signout.php">Sign Out</a></li>
             </ul>
           </li>
         </ul>

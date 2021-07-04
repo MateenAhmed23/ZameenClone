@@ -102,7 +102,7 @@ $sc_for_Farm = array('Any');
 
             <!-- Location -->
             <div class="col-md-8">
-                <label class="form-label" for="location">Location</label>
+                <label class="form-label" for="location">Area</label>
                 <input class="form-control" type="text" name="location" id="location" maxlength="50">
             </div>
 
