@@ -124,7 +124,7 @@ $conn->close();
         <div class="col-md-4">
           <img class="profile-picture" src="images/profile.png" alt="profile alternative picture">
         </div>
-        <div class="col-md-8 pt-3">
+        <div class="col-md-8 pt-5">
           <h1><?php echo $f_name . " " . $l_name;   ?></h1>
         </div>
       </div>
