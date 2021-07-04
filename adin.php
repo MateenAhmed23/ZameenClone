@@ -1,20 +1,12 @@
 
-            <?php
-            session_start();
-            include "connection.php";
-
-
-            
-            $Adid = (int)$_GET['varname'];
-            //echo $Adid;
-
+<?php
+session_start();
+include "connection.php";
+$Adid = (int)$_GET['varname'];
+//echo $Adid;
 //  var_dump($mAdID);
 //var_dump($id);
-
-
-
-
-            ?>
+?>
 
 
 <!DOCTYPE html>
@@ -59,58 +51,50 @@
               <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
               <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
             </ul>
-          </li>
-
-          
-          <!-- <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
-          <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li> -->
+            </li>
         </ul>
       </div>
       
     </nav>
   </header>
 <?php
-$userid=$_SESSION["user_id"];
-$sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
- inner join user on ad.user_id=user.user_id and ad.ad_id='$Adid'";
-$res=$conn->query($sql);
-$Title="";
-$description="";
-$category="";
-$type="";
-$phone="";
-$price="";
-$email="";
-if($conn->query($sql)==TRUE)
-{
-  while($row = $res->fetch_assoc()) {
-    $Title=$row["ad_title"];
-    //echo "$Title";
-    $description=$row["ad_desc"];
-    $category=$row["category"];
-    $type=$row["ad_type"];
-    $phone=$row["phone"];
-    $email=$row["email"];
-    $price=$row["ad_price"];
+  $userid=$_SESSION["user_id"];
+  $sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
+  inner join user on ad.user_id=user.user_id and ad.ad_id='$Adid'";
+  $res=$conn->query($sql);
+  $Title="";
+  $description="";
+  $category="";
+  $type="";
+  $phone="";
+  $price="";
+  $email="";
+  if($conn->query($sql)==TRUE)
+  {
+    while($row = $res->fetch_assoc()) {
+      $Title=$row["ad_title"];
+      //echo "$Title";
+      $description=$row["ad_desc"];
+      $category=$row["category"];
+      $type=$row["ad_type"];
+      $phone=$row["phone"];
+      $email=$row["email"];
+      $price=$row["ad_price"];
+    }
+  // echo "ad belong to: "."$email";
   }
- // echo "ad belong to: "."$email";
-}
-else
-echo"Query error";
-
-
-$sql="SELECT ad_picture.link from ad_picture  inner join ad on ad_picture.ad_id = ad.ad_id and ad_picture.ad_id='$Adid'";
-$result = $conn->query($sql);
-$picturelink="";
-if($conn->query($sql)==TRUE)
-{
-  while($row = $result->fetch_assoc()) {
-    $picturelink=$row["link"];
+  else
+  echo"Query error";
+  $sql="SELECT ad_picture.link from ad_picture  inner join ad on ad_picture.ad_id = ad.ad_id and ad_picture.ad_id='$Adid'";
+  $result = $conn->query($sql);
+  $picturelink="";
+  if($conn->query($sql)==TRUE)
+  {
+    while($row = $result->fetch_assoc()) {
+      $picturelink=$row["link"];
+    } 
   }
- 
-}
-$conn->close();
-
+  $conn->close();
 ?>
 
   <section id="advertisment">
@@ -185,7 +169,7 @@ $conn->close();
             <?php
             echo"<h6>Price: $"."$price"."</h6>"."</li>";
             ?>
-            <a href="mailto:<?php echo $email ?>"   class="list-group-item btn btn-dark" >Message</a></li>
+            <a href="mailto:<?php echo $email ?>"   class="list-group-item btn btn-dark" >Mail</a></li>
           </ul>
         </div>
       </div>
