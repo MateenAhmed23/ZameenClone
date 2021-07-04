@@ -40,7 +40,32 @@ $Adid = (int)$_GET['varname'];
       </button>
       <div class="profile-dropdown collapse navbar-collapse ms-5" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto pe-5">
+        <?php
+          if(isset($_SESSION["user_id"]))
+          {
+          ?>
           <li class="navbar-item"><a class="nav-link" href="publish.php">Publish Ad</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profile
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
+                  <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
+                  <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
+                  <li><a class="dropdown-item" href="Signout.php">Sign Out</a></li>
+                  <?php
+          }
+          else
+          {
+            ?>
+            <li class="navbar-item pe-2"><a class="nav-link" href="login.php">Login</a></li>
+            <li class="navbar-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
+            <?php
+
+          }
+          ?>
+          <!-- <li class="navbar-item"><a class="nav-link" href="publish.php">Publish Ad</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Profile
@@ -51,13 +76,15 @@ $Adid = (int)$_GET['varname'];
               <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
               <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
             </ul>
-            </li>
+            </li> -->
         </ul>
       </div>
       
     </nav>
   </header>
 <?php
+  ///If loggedin .....
+  // do this...
   $userid=$_SESSION["user_id"];
   $sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
   inner join user on ad.user_id=user.user_id and ad.ad_id='$Adid'";
