@@ -85,7 +85,7 @@ $Adid = (int)$_GET['varname'];
 <?php
   ///If loggedin .....
   // do this...
-  $userid=$_SESSION["user_id"];
+  // $userid=$_SESSION["user_id"];
   $sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
   inner join user on ad.user_id=user.user_id and ad.ad_id='$Adid'";
   $res=$conn->query($sql);
