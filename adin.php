@@ -152,7 +152,6 @@ $Adid = (int)$_GET['varname'];
           </div>
           
           <!-- Button functionality disabled atm -->
-          
           <!-- Previous and Next Buttons -->
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
