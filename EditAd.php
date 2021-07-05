@@ -1,5 +1,6 @@
 <?php
 
+
 include"connection.php";
 
 $ad_id;
@@ -170,7 +171,12 @@ $sc_for_Farm = array('Any');
                 <select class="form-select" name="category" id="category" value="<?php echo $cat ?>">
                     <?php
                     foreach ($category as $value) {
-                        echo "<option value='$value'>$value</option>";
+                        echo "<option value='$value'";
+                        if ($cat == $value)
+                        {
+                            echo "selected";
+                        }
+                        echo ">$value</option>";
                     }
                     ?>
                 </select>
@@ -183,9 +189,51 @@ $sc_for_Farm = array('Any');
 
                 <select class="form-select" name="s_category" id="s_category" value="<?php echo $sub_cat ?>"> 
                     <?php
-                    foreach ($sc_for_House as $value) {
-                        echo "<option value='$value'>$value</option>";
+                    if ($cat == 'House')
+                    {
+                        foreach ($sc_for_House as $value) {
+                            echo "<option value='$value'";
+                            if ($sb_cat == $value)
+                            {
+                                echo "selected";
+                            }
+                            echo ">$value</option>";
+                        }
                     }
+                    else if($cat == 'Flat')
+                    {
+                        foreach ($sc_for_Flat as $value) {
+                            echo "<option value='$value'";
+                            if ($sb_cat == $value)
+                            {
+                                echo "selected";
+                            }
+                            echo ">$value</option>";
+                        }
+                    }
+                    else if($cat == 'Commercial')
+                    {
+
+                        foreach ($sc_for_Commercial as $value) {
+                            echo "<option value='$value'";
+                            if ($sb_cat == $value)
+                            {
+                                echo "selected";
+                            }
+                            echo ">$value</option>";
+                        }
+                    }
+                    else{
+                        foreach ($sc_for_Farm as $value) {
+                            echo "<option value='$value'";
+                            if ($sb_cat == $value)
+                            {
+                                echo "selected";
+                            }
+                            echo ">$value</option>";
+                        }
+                    }
+                    
                     ?>
                 </select>
             </div>
@@ -206,6 +254,55 @@ $sc_for_Farm = array('Any');
         </form>
 
     </section>
+
+<script type="text/javascript" src="jquery/jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#category").on("change", function() {
+
+        var category = $("#category").val();
+        // Please change arrays if there are changes in sub categories.... THEY ARE NOT DYNAMMIC
+
+        let txt = "";
+        if (category === 'House') {
+          var House = ['Any', 'Basement', 'Ground Floor', 'First Floor'];
+
+
+          for (let i = 0; i < House.length; ++i) {
+            txt += "<option value=" + House[i] + ">" + House[i] + "</option>";
+          }
+
+
+        } else if (category === 'Flat') {
+
+          var Flat = ['Any', 'Pent House'];
+
+          for (let i = 0; i < Flat.length; ++i) {
+            txt += "<option value=" + Flat[i] + ">" + Flat[i] + "</option>";
+          }
+        } else if (category === 'Commercial') {
+          var Commercial = ['Office', 'Shop'];
+
+
+          for (let i = 0; i < Commercial.length; ++i) {
+            txt += "<option value=" + Commercial[i] + ">" + Commercial[i] + "</option>";
+          }
+        } else {
+
+          var Farm = ['Any'];
+
+          for (let i = 0; i < Farm.length; ++i) {
+            txt += "<option value=" + Farm[i] + ">" + Farm[i] + "</option>";
+          }
+
+        }
+
+
+        $('#s_category').html(txt);
+      })
+    });
+  </script>
 </body>
 
 </html>
