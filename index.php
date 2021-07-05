@@ -195,7 +195,6 @@ $find = 0;
     // all the data is now available.
 
 
-
     if (
       $type != "" && $city != "" && $category != ""
       && $s_category != "" && $location == "" && $max_price == "" && $min_price == ""
