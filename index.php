@@ -192,81 +192,13 @@ $find = 0;
     $min_price = $_POST["min-price"];
     $max_price = $_POST["max-price"];
 
+    if($min_price == "")
+      $min_price = "1000";
+    if($max_price == "")
+      $max_price = "500000000";
+    
+
     // all the data is now available.
-
-
-    if (
-      $type != "" && $city != "" && $category != ""
-      && $s_category != "" && $location == "" && $max_price == "" && $min_price == ""
-    ) {
-      if ($s_category == "Any") {
-        $sql = "SELECT * FROM ad  where '$city' = ad_city 
-        AND '$type' = ad_type and '$category'=category ";
-      
-      } else {
-        $sql = "SELECT * FROM ad  where '$city' = ad_city 
-        AND '$type' = ad_type and '$category'=category  and '$s_category'=sub_category ";
-      }
-    }
-
-    // i'm case 2 
-    // above 4 + area is also present
-
-    if (
-      $type != "" && $city != "" && $category != ""
-      && $s_category != "" && $location != "" && $max_price == "" && $min_price == ""
-    ) {
-      if ($s_category == "Any") {
-        $sql = "SELECT * FROM ad  where '$city' = ad_city and '$location' = ad_area 
-        AND '$type' = ad_type and '$category'=category ";
-
-
-        // sub_cat -> any
-      } else {
-        $sql = "SELECT * FROM ad  where '$city' = ad_city 
-        AND '$type' = ad_type and '$location' = ad_area and '$category'=category  and '$s_category'=sub_category ";
-
-      }
-    }
-
-    // i'm case 3
-    // above 5 and min also present 
-
-    if (
-      $type != "" && $city != "" && $category != ""
-      && $s_category != "" && $location != "" && $min_price != "" && $max_price == ""
-    ) {
-      if ($s_category == "Any") {
-        $sql = "SELECT * FROM ad  where '$city' = ad_city and '$location' = ad_area 
-        AND '$type' = ad_type and '$category'=category and '$min_price'<=ad_price";
-
-  
-
-        // sub_cat -> any
-      } else {
-        $sql = "SELECT * FROM ad  where '$city' = ad_city 
-        AND '$type' = ad_type and '$location' = ad_area and '$category'=category  
-        and '$s_category'=sub_category and '$min_price'<=ad_price";
-
-      }
-    }
-    // i'm case 4
-    // above 5 and max price also given
-
-
-
-    if ($type != "" && $city != "" && $category != "" && $s_category != "" && $location != "" && $max_price != "" && $min_price == "") {
-      if ($s_category == "Any") {
-        $sql = "SELECT * FROM ad  where '$city' = ad_city and '$location' = ad_area 
-        AND '$type' = ad_type and '$category'=category and '$max_price'>=ad_price";
-
-      } else {
-        $sql = "SELECT * FROM ad  where '$city' = ad_city 
-        AND '$type' = ad_type and '$location' = ad_area and '$category'=category  
-        and '$s_category'=sub_category and '$max_price'>=ad_price";
-
-      }
-    }
 
     // i'm case 5
     // all are given
@@ -284,6 +216,29 @@ $find = 0;
         and '$s_category'=sub_category and ad_price between '$min_price' and '$max_price'";
       }
     }
+
+    // i'm case 2 
+    // all + area is not present
+
+    else if (
+      $type != "" && $city != "" && $category != ""
+      && $s_category != "" && $location == "" && $max_price != "" && $min_price != ""
+    ) {
+      if ($s_category == "Any") {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city 
+        AND '$type' = ad_type and '$category'=category and ad_price between '$min_price' and '$max_price'";
+
+
+        // sub_cat -> any
+      } else {
+        $sql = "SELECT * FROM ad  where '$city' = ad_city 
+        AND '$type' = ad_type  and '$category'=category  
+        and '$s_category'=sub_category and ad_price between '$min_price' and '$max_price'";
+
+      }
+    }
+
+    
     $res = $conn->query($sql);
     $links = array();
     //print_r($res->num_rows);

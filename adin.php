@@ -65,18 +65,6 @@ $Adid = (int)$_GET['varname'];
 
           }
           ?>
-          <!-- <li class="navbar-item"><a class="nav-link" href="publish.php">Publish Ad</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Profile
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
-              <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
-              <li><a class="dropdown-item" href="wishlist.php">Wish List</a></li>
-              <li><a class="dropdown-item" href="index.php">Sign Out</a></li>
-            </ul>
-            </li> -->
         </ul>
       </div>
       
@@ -86,7 +74,7 @@ $Adid = (int)$_GET['varname'];
   ///If loggedin .....
   // do this...
   // $userid=$_SESSION["user_id"];
-  $sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price from ad  
+  $sql="SELECT ad.ad_title,ad.ad_desc,ad.category,ad.ad_type,user.phone,user.email,ad.ad_price, ad.ad_city, ad.ad_area from ad  
   inner join user on ad.user_id=user.user_id and ad.ad_id='$Adid'";
   $res=$conn->query($sql);
   $Title="";
@@ -94,6 +82,8 @@ $Adid = (int)$_GET['varname'];
   $category="";
   $type="";
   $phone="";
+  $city="";
+  $area="";
   $price="";
   $email="";
   if($conn->query($sql)==TRUE)
@@ -107,6 +97,8 @@ $Adid = (int)$_GET['varname'];
       $phone=$row["phone"];
       $email=$row["email"];
       $price=$row["ad_price"];
+      $city = $row["ad_city"];
+      $area = $row["ad_area"];
     }
   // echo "ad belong to: "."$email";
   }
@@ -194,23 +186,33 @@ $Adid = (int)$_GET['varname'];
           <ul class="list-group">
             <li class="list-group-item">
             <?php
-            echo"<h6>Category: "."$category"."</h6>"."</li>";
+            echo"<p><b>Category: </b>"."$category"."</p>"."</li>";
             ?>
             <!-- <h6>Category</h6></li> -->
             <li class="list-group-item">
             <?php
-            echo"<h6>Type: "."$type"."</h6>"."</li>";
+            echo"<p><b>Type: </b>"."$type"."</p>"."</li>";
+            ?>
+            <!-- City -->
+            <li class="list-group-item">
+            <?php
+            echo"<p><b>City: </b>"."$city"."</p>"."</li>";
+            ?>
+            <!-- Area -->
+            <li class="list-group-item">
+            <?php
+            echo"<p><b>Area: </b>"."$area"."</p>"."</li>";
             ?>
             <!-- <h6>Type</h6></li> -->
             <li class="list-group-item">
             <!-- <h6>0334-0099221</h6></li> -->
             <?php
-            echo"<h6>Contact: "."$phone"."</h6>"."</li>";
+            echo"<p><b>Contact: </b>"."$phone"."</p>"."</li>";
             ?>
             <li class="list-group-item">
             <!-- <h6>Price: 1000000</h6></li> -->
             <?php
-            echo"<h6>Price: $"."$price"."</h6>"."</li>";
+            echo"<p><b>Price: </b>$"."$price"."</p>"."</li>";
             ?>
             <a href="mailto:<?php echo $email ?>"   class="list-group-item btn btn-dark" >Mail</a></li>
           </ul>
