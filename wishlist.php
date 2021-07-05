@@ -56,7 +56,7 @@ for ($i = 0; $i < $No_of_ads; $i++) {
   
 }
 
-print_r($Pictures);
+//print_r($Pictures);
 
 // All ads saved
 
@@ -169,7 +169,7 @@ $conn->close();
                 <h5 class="card-title"><?php echo $titles[$i]  ?></h5>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><b>Price: </b><?php echo $prices[$i]  ?></li>
+                <li class="list-group-item"><b>Price: $</b><?php echo $prices[$i]  ?></li>
               </ul>
               <div class="card-body pt-1 pb-1">
                 <a href="adin.php?varname=<?php echo $ad_id[$i]  ?>" class="ms-auto me-auto btn btn-secondary me-auto card-link">See</a>

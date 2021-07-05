@@ -154,7 +154,7 @@ $conn->close();
         <div class="col-md-4">
           <img class="profile-picture" src="images/profile.png" alt="profile alternative picture">
         </div>
-        <div class="col-md-8 pt-3">
+        <div class="col-md-8 pt-5">
           <?php
           if (isset($user_ID))
             echo "<h1>" . "$f_name " . "$l_name" . "</h1>";
@@ -189,7 +189,7 @@ $conn->close();
                   <h5 class="card-title"><?php echo $titles[$i];  ?></h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><b>Price: </b><?php echo $prices[$i];  ?></li>
+                  <li class="list-group-item"><b>Price: $</b><?php echo $prices[$i];  ?></li>
                 </ul>
                 <div class=" card-body">
                   <a href="adin.php?varname= <?php echo $ad_id[$i];  ?>" class="ms-auto me-auto btn btn-dark me-auto card-link">See</a>
@@ -197,6 +197,7 @@ $conn->close();
                   <a href="EditAd.php?varname= <?php echo $ad_id[$i];  ?>" class="ms-auto me-auto btn btn-dark me-auto card-link">Edit Ad</a>
                   <a href="deletead.php?varname= <?php echo $ad_id[$i];  ?>" class="ms-auto me-auto btn btn-dark me-auto card-link">Delete</a>
                 </div>
+                <!-- <a href="EditAd.php?varname=<?php echo $ad_id[$i];  ?>" class="ms-auto me-auto w-50 btn btn-dark me-auto card-link">Edit Ad</a> -->
 
               </div>
             </div>
