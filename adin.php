@@ -183,7 +183,7 @@ $Adid = (int)$_GET['varname'];
       <div class="row  ms-auto me-auto">
         <div class="col-lg-8 border ">
         <?php
-        echo"<h4>"."$description"."</h4>";
+        echo"<p>"."$description"."</p>";
         ?>
           <!-- <h2>Description</h2> -->
           <p>
